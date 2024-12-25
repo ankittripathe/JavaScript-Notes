@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio Website</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        width: 1005;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        display: flex;
+        margin: 0;
+        padding: 15px 0px;
+        background-color: orangered;
+        color: white;
+      }
+
+      ul li {
+        list-style: none;
+        margin: 0 25px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul>
+      <li>Home</li>
+      <li>About Me</li>
+      <li>Hire Me</li>
+    </ul>
+
+    <div class="container">
+      <p>I am a Web Developer</p>
+    </div>
+
+    <script>
+      const changeBgRed = () => {
+        document.body.firstElementChild.style.background = "Red";
+      };
+
+      let b = document.body;
+      console.log("First child of b is:", b.firstChild);
+      console.log("First child of b is:", b.firstElementChild);
+
+      // shortcut method
+      console.log(document.body.firstChild);
+      console.log(document.body.firstElementChild);
+    </script>
+  </body>
+</html>

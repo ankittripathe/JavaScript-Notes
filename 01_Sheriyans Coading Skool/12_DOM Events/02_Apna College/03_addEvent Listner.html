@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>addEvent Listners</title>
+    <style>
+      button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 30px;
+      }
+    </style>
+  </head>
+  <body style="background-color: black; color: white">
+    <button id="btnOne">click-1</button>
+    <button id="btnTwo">click-2</button>
+    <button id="btnThree">click-3</button>
+
+    <script>
+      //node.addEventListener (event, callback)
+      //node.removeEventlistener (event, callback)
+
+      // button
+      let btn1 = document.querySelector("#btnOne");
+      btn1.addEventListener("click", () => {
+        console.log("Button was Clicked- Handler1");
+      });
+
+      btn1.addEventListener("click", () => {
+        console.log("Button was Clicked-Handler2");
+      });
+
+      //Notes: EventListner ke through same event pe multiple kamm krwa skte hai. This is not possible in linline Event & Event in js to over come this problem we use => addEventListner('event', callback function)
+
+      // We can also access Event object
+      //node.addEventListener ('click', (evt)=>{})
+
+
+      let btn2 = document.querySelector("#btnTwo");
+      btn2.addEventListener("click", (evt) => {
+        console.log('Event object');
+        console.log(evt);
+        console.log(evt.type);
+        console.log(evt.target);
+        console.log(evt.timeStamp);
+        console.log(evt.clientX, evt.clientY);
+      });
+
+      let btn3 = document.querySelector('#btnThree')
+      btn3.addEventListener('click', ()=>{
+        btn3.innerHTML = 'Teri Ex ki tarah badal gaya hu'
+        btn3.style.backgroundColor = 'yellow'
+        btn3.style.padding = '20px'
+        btn3.style.borderRadius ='30px'
+      })
+
+    </script>
+  </body>
+</html>

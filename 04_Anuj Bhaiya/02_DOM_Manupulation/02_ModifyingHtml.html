@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM (Modifying HTML)</title>
+  <style>
+    .container {
+      background-color: teal;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 450px;
+      padding: 10px;
+      row-gap: 10px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      display: flex;
+      flex-shrink: 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .round-border {
+      border-radius: 50%;
+      border: 3px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="create">
+    <div id="box-1" class="box">box-A</div>
+    <div id="box-2" class="box random">box-B</div>
+    <div id="box-3" class="box">box-C</div>
+    <div id="box-4" class="box">box-D</div>
+  </div>
+  <p>This is para 1</p>
+  <p>This is para 2</p>
+  <h4>Home</h4>
+  <h4>About</h4>
+  <h4>Contact Us</h4>
+  <h5>The End</h5>
+  <button>click me!</button>
+
+  <script>
+    // document.getElementById("box-1").innerHTML = '<h1> hello</h1>'
+
+    const boxOne = document.getElementById('box-1')
+    // boxOne.innerHTML = '<h1>Hello</h1> <p>Namaste<p/>'
+    boxOne.innerHTML = 'hello Jee'
+    boxOne.style.backgroundColor = 'salmon'
+
+
+    // add Class 
+    boxOne.classList.add('round-border')
+    console.log(boxOne);
+
+
+    // var check = document.querySelector('#box-2') // below by Id se huwa hai 
+    var check = document.getElementById('box-2')
+    check.classList.add('Momo', 'pizza')
+    console.log(check);
+
+
+    // Add class
+    const boxes = document.getElementsByClassName('box')
+
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].classList.add('killer')
+    }
+    console.log(boxes);
+
+    // remove class
+    check.classList.remove('Momo')            // for single
+    check.classList.remove('Momo', 'pizza')   // for double
+    console.log(check);
+
+
+
+
+    // Creating new Elements
+    const newHeading = document.createElement('h2')
+    newHeading.innerText = "This is Brand"
+
+    const divs = document.querySelector('div')
+    divs.append(newHeading)
+    divs.prepend(newHeading)
+
+    newHeading.setAttribute('id', 'main')
+    newHeading.setAttribute('style', 'color:yellow')
+    newHeading.classList.add('checkHeading', 'demoHeading', 'morgan')
+    newHeading.classList.remove('checkHeading')
+
+    console.log(newHeading);
+  </script>
+</body>
+
+</html>

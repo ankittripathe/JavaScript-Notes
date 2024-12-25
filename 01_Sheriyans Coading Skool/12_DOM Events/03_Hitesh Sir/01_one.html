@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Events</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing Image</h2>
+
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="god"
+            src="https://images.pexels.com/photos/13041184/pexels-photo-13041184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <img
+            width="200px"
+            id="phone"
+            src="https://images.pexels.com/photos/583842/pexels-photo-583842.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <img
+            width="200px"
+            id="coading"
+            src="https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <img
+            width="200px"
+            id="car"
+            src="https://images.pexels.com/photos/831475/pexels-photo-831475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3732453/pexels-photo-3732453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <a style="color: aliceblue" href="https://amazon.com" id="amazon"
+            >Amazon</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    /*** onclick (old Approach) ***/
+    // const owl = document.getElementById("owl");
+    // owl.onclick = () => {
+    //   alert("owl clicked");
+    // };
+
+
+    // without variable declearing above line code.
+    // document.getElementById("owl").onclick = function(){
+    //   alert("owl clicked");
+    // };
+
+
+    /*** Event listner (best approach)  ***/
+    // document.getElementById("owl").addEventListener("click", function(){
+    //     alert("owl clicked 2");
+    // },false);         
+    // By default false hota hai jarurat ke time true kr skte hai => nhi likenge tab vi false assume hai.
+
+    // document.getElementById("owl").addEventListener("click", function(){
+    //   alert("owl clicked-3");
+    // });
+
+    /*
+        //attachEvent()
+        //jQuery - on
+
+          type, timestamp, defaultPrevented ,
+          target, toElement, scrElement, currentTarget
+          clintX, clintY, screenX, screenY
+          altkey, ctrlKey, shift, keyCode
+    */
+
+    // Event propagation => (1).bubbling,  (2).capturing
+    /*** bubbling (buttom to top) ****/ //(pahle ander ka phir bahar ka)
+    // document
+    //   .getElementById("images")
+    //   .addEventListener("click", function (eventobject) {
+    //     console.log("clicked indside the ul");
+    //   });
+
+    // document
+    //   .getElementById("owl")
+    //   .addEventListener("click", function (eventobject) {
+    //     console.log("owl clicked");
+    //     // console.log(eventobject);
+    //   });
+
+    /***** capturing (buttom to top)  ***/
+    // (Pahle top ka Event aaply hoga like body, > div> > h1 pe event laga hoga toh pahle uspe apply hoga tab uske niche wale pe. addEventListner('click',()=>{};true) => last me true krna hota hai capturing wale ke liye by default false hota hai.
+
+    // document.getElementById("images").addEventListener("click", (e) => {
+    //     console.log("clicked indside the ul");
+    //   },true);
+
+    // document.getElementById("owl").addEventListener("click",(e) => {
+    //     console.log("owl clicked");
+    // },true);
+
+
+
+
+    /*** Stop propagation (bubble hone par  upar wale Elements pe nhi jaega like body ) ****/
+    document.getElementById("images").addEventListener(
+      "click",
+      function (ev) {
+        console.log("clicked indside the ul");
+      },
+      false
+    );
+
+    document.getElementById("owl").addEventListener(
+      "click",
+      function (ev) {
+        console.log("owl clicked");
+        ev.stopPropagation();           // esko krne se ul wala ab nhi print krega
+      },
+      false
+    );
+
+
+
+      // preventDefault()
+      document.getElementById('amazon').addEventListener('click', (e) =>{
+        e.preventDefault();     // degault kr dega uske site pe nhi le jaega
+        e.stopPropagation()     
+        console.log("Amazon clicked");
+      })
+
+
+    document.querySelector('#images').addEventListener('click', (ev) =>{
+        console.log(ev.target);
+        console.log(ev.target.parentNode);
+        console.log(ev.target.tagName);
+        let removeIt = ev.target.parentNode
+        removeIt.remove()
+        // removeIt.parentNode.removeChild(removeIt)  // direct  
+      },false)
+
+    //     document.querySelector('#images').addEventListener
+    //     ('click',function(e){
+    //       console.log(e.target.tagName);
+    //      if(e.target.tagName === 'IMG'){
+    //      let removeIt = e.target.parentNode
+    //       removeIt.remove()
+    //    }
+    //  })
+
+  </script>
+</html>

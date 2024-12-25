@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch API</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <h1>fetch API(Application Programming Interface)</h1>
+    <h3>
+      The Fetch API provides an interface for fetching (sending/receving)
+      resourecs from internet.
+    </h3>
+    <h3>It uses Request and Response object</h3>
+    <h3>The fetch() method is used to fetch a resource (data)</h3>
+    <h3>let promise = fetch(url,[options])</h3>
+
+    <p id="fact"></p>
+    <button id="btn">Get a Facts</button>
+
+
+
+    <script>
+      /*********Example.1 (This is free Api) **************/
+      //   const URL = "https://cat-fact.herokuapp.com/facts";
+
+      //   const getFacts = async () => {
+      //     console.log("getting data....");
+      //     let response = await fetch(URL);
+      //     console.log(response);              //JSON format
+      //     // console.log(response.status);
+      //     // console.log(response.url);
+      //    let data = await response.json()
+      //    console.log(data);
+      //    console.log(data[0]);
+      //    console.log(data[0].text);
+      //    console.log(data[0].type);
+      //   };
+      //   getFacts();
+      // console.log(getFacts());   // promiseState=> pending, fullfilled, rejected
+
+      /********** By using Normal function   ************/
+      //   async function getFacts() {
+      //     console.log("getting data....");
+      //     let response = await fetch(URL);
+      //     console.log(response);
+      //   }
+      //   getFacts();
+
+
+      /*************************Example.2********************/
+
+      const URL = "https://cat-fact.herokuapp.com/facts"
+      const factpara = document.querySelector('#fact')
+      const btn1 = document.querySelector('#btn')
+
+      const getFacts = async () => {
+        console.log("getting data....");
+        let response = await fetch(URL);
+        console.log(response); //JSON format
+        let data = await response.json();
+        factpara.innerText = data[0].text
+        factpara.style.backgroundColor = 'green'
+        
+      };
+    //   getFacts();
+    btn1.addEventListener('click', getFacts)
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM(Part-2)</title>
+    <style>
+        body{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<div class="bg-black">
+    <h1 id="title" class="heading">DOM Learning On Chai aur Code</h1>
+    <p>Lorem, ipsum dolor sit amet !</p>
+</div>
+
+<script>
+    //  console.log(document.getElementById('title'));
+    //  console.log(document.getElementById('title').id);
+    //  console.log(document.getElementById('title').className);   
+    //  console.log(document.getElementById('title').getAttribute('id'));
+    //  console.log(document.getElementById('title').getAttribute('class'));
+    //  console.log(document.getElementById('title').setAttribute('class', 'testClass'));
+     console.log(document.getElementById('title').setAttribute('id', 'idTest'));
+
+   //set attributes krne se  id => overWrite ho gaya hai new id = idTest
+    let tietal = document.getElementById('idTest')
+    tietal.style.backgroundColor = 'green'
+    tietal.style.padding = '15px'
+    tietal.style.borderRadius = '20px 10px 20px 10px'
+    
+    console.log(tietal.innerHTML);
+    console.log(tietal.innerText);
+    console.log(tietal.textContent);
+
+</script>
+
+</body>
+</html>

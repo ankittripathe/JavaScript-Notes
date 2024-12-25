@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inner Html</title>
+  </head>
+  <body>
+    <h1>JavaScripts</h1>
+    <span id="first" hidden>
+      <p>Ankit Tripathi</p>
+      Hey I am Span
+    </span>
+    <script>
+      // console.log()
+      let x = document.getElementsByTagName("span")[0];
+      console.log(x);
+
+      // console.dir()
+      let y = document.getElementsByTagName("span")[0];
+      console.dir(y);
+
+      console.log(document.body.firstChild.nodeName);
+      console.log(document.body.firstElementChild.nodeName);
+
+      // innerHTML()
+      console.log(first.innerHTML);
+
+      // change innerHTml
+      first.innerHTML = "<i>Do not give up!</i>";
+
+      // outerHTML()
+      console.log(first.outerHTML);
+
+      // change outer html
+      first.outerHTML = "<div>Ankit Here! </div>";
+
+      /* Process kuch is tarah change ho rha hai  upar wala
+        
+        first.innerHTML
+        ' <p>Ankit Tripathi</p>Hey I am Span'
+        
+        first.innerHTML ="<i>Do not give up </i>"
+        '<i>Do not give up </i>'
+        
+        first.outerHTML
+        '<span id="first"><i>Do not give up </i></span>'
+        
+        first.outerHTML ="Maahi"
+        'Maahi'
+        */
+
+      // console.log(document.body.firstChild.data);
+      // console.log(document.body.firstChild.nodeValue);
+
+      //text content (pura text)
+      // console.log(document.body.textContent);
+
+      // Hidden Property
+      // console.log(first.hidden = false); // isme pahle html wale section me hidden krna hoga phir
+    </script>
+  </body>
+</html>

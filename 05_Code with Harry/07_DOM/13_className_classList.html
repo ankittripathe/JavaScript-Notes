@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>className-classList</title>
+    <style>
+      .yellow {
+        background-color: yellow;
+        color: white;
+      }
+
+      .red {
+        background-color: red;
+        color: white;
+      }
+
+      .text-dark {
+        color: black;
+        font-weight: bold;
+      }
+
+      .blue {
+        background-color: blue;
+        color: magenta;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="first" class="yellow text-dark red">
+      <span>className- classList</span>
+    </div>
+
+    <script>
+      // className  add
+      first.className = "blue red yellow";
+
+      // Check total classList
+      first.classList;
+
+      // removeClass
+      first.classList.remove("blue");
+
+      // addClass
+      first.classList.add("orange");
+
+      // toggle laga hai toh hata dega aur nhi laga hai toh laga dega .
+      // lagate time  (true)! aur hatate time  (false)!
+      first.classList.toggle("hara");
+
+      //list me  hai ya nhi true aur false me bata dega
+      // first.classList.contains("green")
+
+      /*
+     Overview of all 
+     first.className ="green red"
+     first.classList
+     first.classList.add("red")
+     first.classList.remove("red")
+     first.classList.toggle("red")
+     first.classList.contains("red")
+    */
+    </script>
+  </body>
+</html>

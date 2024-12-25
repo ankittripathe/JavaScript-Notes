@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM (Creating New Elements)</title>
+  <style>
+    .container {
+      background-color: teal;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 450px;
+      padding: 10px;
+      row-gap: 10px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      display: flex;
+      flex-shrink: 0;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .round-border {
+      border-radius: 50%;
+      border: 5px solid black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="create">
+    <div id="box-1" class="box">box-A</div>
+    <div id="box-2" class="box">box-B</div>
+    <div id="box-3" class="box">box-C</div>
+    <div id="box-4" class="box">box-D</div>
+  </div>
+
+  <script>
+    // Creating New Elements  //
+    // Example.1
+    let heading = document.createElement('h5')        // new element created.
+    heading.innerHTML = 'Learning DOM Manupulation'   // Text vi Write ho gaya
+
+
+    let divs = document.getElementById('create')
+    divs.appendChild(heading)     // append krne ke badd hi content Show hoga.
+    // divs.prepend(heading)      // prepend ya append krne ke badd hi content Show hoga display par.
+
+
+
+    // Example.2
+    let para = document.createElement('p')
+    para.innerHTML = '<i>New Paragraph Created</i>'
+    document.body.append(para)
+    // document.body.prepend(para)
+
+
+
+    // Example.3
+    let btn = document.createElement('button')
+    btn.innerHTML = 'Sign In'
+    btn.style.margin = '10px'
+    btn.style.padding = '4px'
+    document.body.append(btn)
+
+    btn.setAttribute('id', 'btnOne')
+    btn.classList.add('signup', 'karo')
+    console.log(btn);
+  </script>
+</body>
+
+</html>

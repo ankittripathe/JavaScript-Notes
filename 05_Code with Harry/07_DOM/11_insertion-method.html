@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insertion Methods</title>
+  </head>
+  <body>
+    <!-- I am start of this container(outer) -->
+    <div class="container">
+      I am start of this container(inner)
+
+      <div id="first">I am the First Element</div>
+
+      I am end of this container(inner)
+    </div>
+    <!-- I am start of this container(outer) -->
+
+    <script>
+      let a = document.getElementsByTagName("div")[0];
+
+      let p = document.createElement("p");
+      p.innerHTML = "<h1> Hello World! </h1>";
+      // a.appendChild(p);
+      document.body.append(p); //upar wala Aur Esline ka matlab EK hi hoga
+
+      // a.append(p);
+      // a.prepend(p);
+      // a.before(p);
+      // a.after(p);
+      // a.replaceWith(p)
+    </script>
+  </body>
+</html>

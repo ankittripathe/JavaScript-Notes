@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM (getAttribute)</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+
+    body {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>get Attribute</h1>
+  <div id="box" class="hero" name='Ankit' course='javaScripts'>This is a div</div>
+  <p class="paragraph">This is Paragraph</p>
+  <button class="clickhere">Click Me</button>
+  <h6 class="greet" id="wish">Thank you </h6>
+
+
+  <script>
+    //**** (1) getAttribute(attr) => To get all the attribute value  ***//
+
+    // Example.1
+    // Selecting the Elements div
+    const storekrLoo = document.querySelector('div')
+    console.log(storekrLoo);   // output: <div>This is a div</div>
+
+    // (a) By direct method
+    console.log(storekrLoo.getAttribute('id'));        // output: box
+    console.log(storekrLoo.getAttribute('class'));     // output: hero 
+    console.log(storekrLoo.getAttribute('name'));      // output: Ankit
+    console.log(storekrLoo.getAttribute('course'));    // output: javaScripts
+    console.log(storekrLoo.getAttribute('game'));
+    // output:- null (if not present there then outpot will be null)
+
+
+    // (b) By declearing in Variable
+    const getVal1 = storekrLoo.getAttribute('id')
+    console.log(getVal1);   // output:- box
+
+    const getVal2 = storekrLoo.getAttribute('class')
+    console.log(getVal2);  // output:- hero
+
+    const getVal3 = storekrLoo.getAttribute('name')
+    console.log(getVal3);  // output:- Ankit
+
+
+    // Example.2
+    // Selecting the Tag p
+    const para = document.querySelector('p')
+    console.log(para.getAttribute('class'));    // output:- paragraph
+
+
+    // Example.3
+    // Selecting the Tag button
+    const btn = document.querySelector('button')
+    console.log(btn.getAttribute('class'));   // output:- clickhere
+
+
+    // Example.4
+    const heading = document.querySelector('h6')
+    console.log(heading);    // output:- h6
+
+    console.log(heading.getAttribute('id'));     // output:- wish
+    console.log(heading.getAttribute('class'));  // output:- greet
+  </script>
+
+</body>
+</html>

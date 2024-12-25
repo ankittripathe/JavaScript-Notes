@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attributes Methods</title>
+  </head>
+  <body>
+    <div id="first" class="hey" data-game="cricket" data-Player="Ankit">
+      hello Namaste!
+    </div>
+
+    <script>
+      let first = document.getElementById("first");
+
+      let a = first.getAttribute("class");
+      console.log(a);
+
+      let x = first.getAttribute("id");
+      console.log(x);
+
+      // shortcut
+      console.log(document.getElementById("first").getAttribute("class"));
+
+      // jo hai uska true jo nhi hai uska false
+      console.log(first.hasAttribute("class"));
+      console.log(first.hasAttribute("style"));
+      console.log(first.hasAttribute("background"));
+
+      // Add Attributes
+      first.setAttribute("id", "one"); // overWrite kr dega
+      first.setAttribute("class", "Ram Dhoni");
+      first.setAttribute("hidden", "true");
+      first.setAttribute("class", "Ram Dhoni");
+
+      // Remove Attributes
+      // console.log(first.removeAttribute("class"));
+
+      first.removeAttribute("hidden");
+      first.removeAttribute("id");
+
+      // Total attributes kya ky hai list me aa jaega
+      console.log(first.attributes);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert-Adjecent-HTML/ Text /Element</title>
+  </head>
+  <body>
+    <div id="first">Namaste!</div>
+
+    <script>
+      first.insertAdjacentHTML(
+        "beforebegin",
+        '<div id="test"> before Begain </div>'
+      );
+      first.insertAdjacentHTML(
+        "beforeend",
+        '<div class="test"> before End </div>'
+      );
+      first.insertAdjacentHTML(
+        "afterbegin",
+        '<div class="test"> after Begin </div>'
+      );
+      first.insertAdjacentHTML(
+        "afterend",
+        '<div class="test"> after End </div>'
+      );
+
+      // first.insertAdjacentHTML('beforeend', '<img class="test"> beforeend </img>')  //only check kr rha tha
+    </script>
+  </body>
+</html>

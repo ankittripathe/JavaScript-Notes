@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM(getAttribute)</title>
+</head>
+  <div id ="box" class ="hero" name ='Ankit'>This is a div</div>
+  <p class ="paragraph">This is Paragraph</p>
+
+ <script>
+    /**** 1.getAttribute(attr) => to get all the attribute value  ****/
+    const divs = document.querySelector('div')
+    console.log(divs);
+
+    // ye Tinoo direct without declearing varibale
+    console.log(divs.getAttribute('id'));         // no need to assign variable like below
+    console.log(divs.getAttribute('class'));      // no need to assign variable like below
+    console.log(divs.getAttribute('name'));       // no need to assign variable  like below
+
+    // with variable declearing
+    var getVal = divs.getAttribute('id')
+    // console.log(getVal);
+
+    var getVal = divs.getAttribute('class')
+    // console.log(getVal);
+
+    var getVal = divs.getAttribute('name')
+    // console.log(getVal);
+
+
+    let para = document.querySelector('p')
+    console.log(para.getAttribute('class'));
+
+
+    /***** 2.setAttributes(attr, value) => to set the attribute value  *****/
+
+
+
+
+ </script>
+</body>
+</html>

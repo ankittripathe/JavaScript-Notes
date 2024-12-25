@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM (querySelector)</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg-black">
+    <h1 id="title" class="heading">
+      DOM Learning On Chai aur Code
+      <span style="display: none">test textContant</span>
+    </h1>
+
+    <h2>Lorem, ipsum dolor sit Lorem, ipsum</h2>
+    <h2>Lorem, ipsum dolor sit Lorem, ipsum</h2>
+    <h2>Lorem, ipsum dolor sit Lorem, ipsum</h2>
+    <h2>Lorem, ipsum dolor sit Lorem, ipsum</h2>
+    <p>Lorem, ipsum dolor sit amet !</p>
+    <input type="password" />
+
+    <ul>
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+    </ul>
+
+    <ol>
+      <ul>
+        <li>just Chill</li>
+        <li>just Chill</li>
+      </ul>
+    </ol>
+
+  </div>
+
+
+
+
+  <script>
+    // (1) querySelector
+    const selector = document.querySelector("h2");
+    // console.log(selector);
+
+    selector.innerText = "Shirf pahla wala select hoga";
+    selector.style.backgroundColor = "red";
+
+
+    // (2) querySelecor by using (#id)
+    const queryById = document.querySelector("#title");
+    // console.log(queryById);
+
+
+    // (3) querySelector by using (.class)
+    const queryByClass = document.querySelector(".heading");
+    // console.log(queryByClass);
+
+
+    const check = document.querySelector('input[type = "password"]');
+    // console.log(check);
+
+
+    // (4) Acccess ul>li through querySelector 
+    const myul = document.querySelector("ul");
+    // console.log(myul);     // Esko further querySelector laga ke Access kr skte hai
+
+    const turnGreen = myul.querySelector("li");  // Esko vi variable me store kr lete hai
+    console.log(turnGreen);
+
+    turnGreen.style.backgroundColor = "green";
+    turnGreen.style.padding = "10px";
+    turnGreen.style.borderRadius = "10px 15px";
+    turnGreen.innerHTML = 'Surprise'
+
+    /*   Note: Upar wala pura code ka matlab yahi hai Niche wala
+         const myul = document.querySelector("ul").querySelector("li");
+         myul.style.backgroundColor = 'green'
+         myul.style.padding = "10px";
+         myul.style.borderRadius = "10px 15px";
+
+         shortcut method
+         const myul = document.querySelector("ul li");
+    */
+
+    // (5) acessing ol>ul>li through quarySelector  using shortcut method
+    // const chill = document.querySelector('ol').querySelector('ul').querySelector('li')
+    const chill = document.querySelector('ol ul li')
+    console.log(chill);
+
+    chill.style.backgroundColor = 'orange'
+    chill.style.listStyleType = 'none'
+    chill.style.padding = '8px'
+    chill.style.borderRadius = '8px'
+    chill.innerHTML = 'Testing'
+
+
+  </script>
+</body>
+</html>

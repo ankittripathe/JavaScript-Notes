@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>DOM (delete Element || remove Child)</title>
+</head>
+
+<body>
+  <div>
+    <h1>Main Heading</h1>
+    <h2>Middle Heading</h2>
+    <p>This is Paragraph</p>
+    <button>Click me!</button>
+  </div>
+
+  <ul>
+    <li>java</li>
+    <li>javaScripts</li>
+  </ul>
+
+  <script>
+    // (1) remove p
+    const para = document.querySelector("p");
+    para.remove();
+
+    // (2) remove h1
+    document.querySelector("h1").remove(); //single line codee
+
+
+    /***  removeChild() node  ****/
+    // Example.1
+    const parent = document.querySelector("div");
+    const child = document.querySelector("button");
+    //   parent.removeChild(child);
+    console.log(parent.removeChild(child));
+
+
+
+    // Example.2
+    const parent2 = document.querySelector('ul')
+    console.log(parent2);
+
+    const child2 = document.querySelectorAll('li')
+    console.log(child2);
+
+    parent2.remove(child2)
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM EVENTS</title>
+  <style>
+    .container {
+      background-color: lightgreen;
+      width: 450px;
+      padding: 10px;
+    }
+
+    .box {
+      height: 70px;
+      width: 100px;
+      background-color: white;
+      display: flex;
+      flex-shrink: 0;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+    }
+
+    input {
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="create">
+    <div id="box-1" class="box" onclick="myClick()">box-A</div>
+    <div id="box-2" class="box random" onmouseover="mouseOver()">box-B</div>
+    <div id="box-3" class="box">box-C</div>
+    <div id="box-4" class="box">box-D</div>
+    <div id="box-5" class="box">box-E</div>
+  </div>
+
+  <p>This is para1</p>
+
+  <form action="#">
+    <input type="text" id="nameInput" onkeydown="keyDownEvent()" onkeyup="keyUpEvent()" onkeypress="keyPressEvent()"
+      placeholder="Press key here" />
+
+    <input type="text" id="keyInput" />
+
+    <input type="text" onkeydown="handleKey(event)" placeholder="Press any key">
+  </form>
+
+  <!-- Scripts -->
+  <script>
+    // (1) onclick Event
+    function myClick() {
+      console.log('I was clicked');
+    }
+
+    // (2) onmouseover Event
+    const mouseOver = () => {
+      console.log('mouse hover')
+    }
+
+
+    // (3) onkeypress Event
+    const keyPressEvent = () => {
+      console.log('key was pressed');
+    }
+
+    // (4) onkeyup Event
+    const keyUpEvent = () => {
+      console.log('key Up was pressed');
+    }
+
+    // (5) onkeydown Event
+    const keyDownEvent = () => {
+      console.log('key Down was pressed');
+    }
+
+
+    // keyHandler with Events  //
+    const handleKey = (event) => {
+      console.log('Key pressed:', event.key);
+      if (event.key === 'a') {
+        console.log('You pressed the a key!');
+      } else if (event.key === 'b') {
+        console.log('You pressed the b key!');
+      } else if (event.key === 'c') {
+        console.log('You pressed the c key!')
+      } else {
+        // console.log('Not sure')
+      }
+    }
+
+
+    // Event listeners  //
+    // Example.1
+    const box5 = document.getElementById('box-5')
+
+    box5.addEventListener('click', () => {
+      console.log('clicked on Box-E');
+    })
+
+    box5.addEventListener('click', (evt) => {
+      console.log(evt.type);
+      console.log(evt.target);
+      console.log(evt.clientX, event.clientY);
+    })
+
+
+    // Example.2
+    const fillInput = document.getElementById('keyInput')
+
+    fillInput.addEventListener('keypress', (e) => {
+      console.log('keypress =', e.key);
+      console.log("event type =", e.type);
+    })
+
+    fillInput.addEventListener('keydown', (e) => {
+      console.log('keydown =', e.key);
+      console.log('event type =', e.type);
+    })
+
+    fillInput.addEventListener('focus', (e) => {
+      console.log('key', e);
+      console.log('event type =', e.type);
+    })
+
+
+
+    // Notes: Bubbling Event => Pahle inner event phir outer event.
+    const box4 = document.getElementById('box-4')
+    box4.addEventListener('click', (evt) => {
+      console.log('clicked on Box-D');
+      // evt.stopPropagation()   // dusra koie outer event nhi kaam krega
+    })
+
+
+    // Bubbling Phase: The event travels back up from the target element to the document.
+    // This is bubbling (pahle box ka Event aaega fir container kaa)
+
+    const containerWala = document.getElementById('create')
+    containerWala.addEventListener('click', (evt) => {
+      console.log('clicked on Container');
+    },)
+
+
+    // Capture Phase: The event starts from the document and travels down to the target element.
+    // Notes: Capture me pahle outer event(like body ke badd) phir inner event(div ya kuch vi)
+
+    containerWala.addEventListener('click', (evt) => {
+      console.log('clicked on Container');
+      // evt.stopPropagation()   // baki sare event stop ho jaega 
+    }, true)
+
+
+
+    // capture me bracket ke last me by default false hota hai usko true krna hoga.
+    // Dono me se ek ko comment kregene tavi output sahi se pata chalega 
+
+
+
+    /*Notes:
+    Capture Phase Listener:
+    Added to the outer div with {capture: true}. This listener runs during the capture phase.
+    It logs "Outer Div Clicked (Capture Phase)" when the outer div is clicked.
+    Bubble Phase Listener:
+    
+    Added to the inner div. This listener runs during the bubbling phase.
+    It logs "Inner Div Clicked" and calls event.stopPropagation() to prevent the event from propagating further.
+    Document Listener:
+    
+    This listener is also in the bubbling phase, but it will not run if the event is stopped in the inner div's handler.
+    In this example, when you click on the inner div:
+    
+    The event first reaches the outer div during the capture phase, logging "Outer Div Clicked (Capture Phase)".
+    The event then reaches the inner div during the bubbling phase, logging "Inner Div Clicked" and stopping further propagation.
+    As a result, the event does not reach the document level, so "Document Clicked" is not logged.
+    By using event.stopPropagation(), you effectively prevent the event from continuing to the next phases or listeners.
+     */
+
+  </script>
+</body>
+
+</html>

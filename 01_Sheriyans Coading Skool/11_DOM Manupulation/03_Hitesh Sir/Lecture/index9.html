@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM(delete / remove)</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <ul class="language">
+      <li>JavaScripts</li>
+    </ul>
+
+    <script>
+      function addLang(LangName) {
+        const li = document.createElement("li");
+        // console.log(li);
+        li.innerHTML = `${LangName}`;
+        // document.querySelector('.language').appendChild(li)  //aaise vi hoga 
+        let viewAdd = document.querySelector(".language");
+        viewAdd.appendChild(li);
+        console.log(viewAdd);
+    }
+    addLang("TypeScript");
+    addLang("Python");
+
+
+    //In Optimize way  upar wala code
+    function addOptiLang(LanName){
+        const li = document.createElement('li')
+        const addText = document.createTextNode(LanName)
+        li.appendChild(addText)
+        // li.appendChild(document.createTextNode(LanName))  //upar dono line ka matlab yahi hai 
+        // document.querySelector('ul').appendChild(li)
+    }
+    addOptiLang('goLang')
+
+
+    //Edit 
+    const secondLang = document.querySelector("li:nth-child(2)");
+    console.log(secondLang);
+    // secondLang.innerHTML = 'Mojo'      //same optimize way me or Another Method
+    const newLi = document.createElement('li')
+    newLi.textContent = 'Mojo'
+    secondLang.replaceWith(newLi)
+
+    //Edit 2nd way
+    const firstLang = document.querySelector('li:first-child')
+    firstLang.outerHTML = '<li>kotlin</li>'
+    console.log(firstLang);
+
+
+    //Remove
+    const lastLang = document.querySelector('li:last-child')
+    // lastLang.remove()
+
+
+    </script>
+  </body>
+</html>

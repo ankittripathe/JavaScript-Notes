@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project 1</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Simple DOM Todo App</h1>
+      <input type="text" id="inputfield" />
+      <button class="btn">Click Me</button>
+      <div class="todoListsElm">
+
+      </div>
+    </div>
+
+    <script>
+      let inputElm = document.getElementById("inputfield");
+      let clickBtn = document.querySelector(".btn");
+      let todoElm = document.querySelector('.todoListsElm');
+
+     
+
+      let addTodo = () => {
+        console.log(inputElm.value);
+
+        let liElem = document.createElement('li');
+        liElem.textContent = inputElm.value;
+        console.log(liElem);
+        todoElm.append(liElem);  // append huwa li
+        
+        inputElm.value = '';  //null ho jaega
+      };
+
+      clickBtn.addEventListener("click", () => {
+        addTodo();
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DOM(innerText/ innerHTML/ textContent)</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <div>
+      <h3>Fruits</h3>
+      <ul>
+        <li>Mango</li>
+        <li>Apple</li>
+        <li>Orange</li>
+      </ul>
+      <h4 style="visibility: hidden">
+        This is For Text content <span>Good Night</span>
+      </h4>
+    </div>
+
+    <script>
+      // part-1
+      // let divs = document.querySelector('div').innerHTML
+      let divs = document.querySelector("div");
+      console.log(divs);
+      console.log(divs.innerText);    // pure text  bas print hoga.
+      console.log(divs.innerHTML);    // Html content vi aata hai.
+
+      // part-2
+      let heading4 = document.querySelector("h4");
+      console.log(heading4.innerHTML);
+      console.log(heading4.innerText);
+      console.log(heading4.textContent);            // hidden vi rhega toh vi print hoga
+      heading4.innerText = 'Sorry i am Late.'
+      // browser ke elements ke jake dekenge tab dikhega ki change huwa hai 
+
+      // After changing value => look in console 
+      heading4.textContent = 'Better luck Next Time'
+      console.log(heading4.textContent);
+      // console.log(heading4);
+
+      // Changing Inner HTML
+      let heading = document.querySelector("h3");
+      // heading.innerHTML = "<i>New Heading</i>";
+      heading.innerHTML = "<i><h1>New Heading After Changes</h1></i>";  // 
+    </script>
+  </body>
+</html>

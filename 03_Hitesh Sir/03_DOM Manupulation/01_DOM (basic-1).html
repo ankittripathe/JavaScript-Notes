@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM(Part-1)</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1 id="title" class="heading">Learning DOM On Chai Aur Code</h1>
+      <p>Lorem, ipsum dolor sit amet !</p>
+    </div>
+
+    <script>
+      // (1) getElementsById ()  //
+
+      // console.log(document.getElementById('title'));
+
+      console.log(document.getElementById("title").id); // output:- title
+      console.log(document.getElementById("title").className); // output:- heading
+
+      console.log(document.getElementById("title").getAttribute("id")); // output:- title
+      console.log(document.getElementById("title").getAttribute("class")); // output:- heading
+
+      /* 
+           Note: ( setAttribute always overWrite old existing id or class according to applied condition )
+        */
+
+      // (a) setAttributes in class //
+      console.log(
+        document.getElementById("title").setAttribute("class", "test")
+      );
+
+      // purane wale class ko overWrite kr dega aur heading => ke jagah pe test aa jaega.
+
+      console.log(document.getElementById("title").className); // test
+      console.log(document.getElementById("title").getAttribute("class")); // test
+
+      // Notes: We can set more than one class //
+      console.log(
+        document
+          .getElementById("title")
+          .setAttribute("class", "test classTest  check")
+      );
+
+      console.log(document.getElementById("title").className); // output: test classTest check
+
+      // (b) setAttributes in Id //
+      // always overWrite old one(gayab) (Note: filhal esko on krenge toh sab change ho jaega kauki id ko leke sab kamm huwa hai upar)
+
+      //  console.log(document.getElementById('title').setAttribute('id', 'idTest'));
+      // console.log(document.getElementById('idTest'))
+
+      // (c) set Any other Attributes //
+      // Ess name se Agar koie attributes hai toh overWrite kr dega, Agar nhi hai toh ban jaega key(palyer) = value(dhoni)
+      console.log(
+        document.getElementById("title").setAttribute("player", "Dhoni")
+      );
+
+      console.log(document.getElementById("title").getAttribute("player"));
+    </script>
+  </body>
+</html>

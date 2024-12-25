@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>callbacks-Function</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <h2>
+      Callbacks => A callback is a function passed an argument to another
+      function
+    </h2>
+
+    <script>
+      //Example
+      function sum(a, b) {
+        console.log(a + b);
+      }
+
+      function calculator(a, b, sumCallback) {
+        sumCallback(a, b);
+      }
+      calculator(1, 3, sum);
+
+      //   //Example
+      //   const hello = () => {
+      //     console.log("hello callback");
+      //   };
+      //   setTimeout(hello, 3000);
+    </script>
+
+    <script>
+      /*******Example 1*/
+
+      // function
+      function greet(name, callMe) {
+        console.log(`hello ${name}`);
+        callMe();
+      }
+
+      // callback function
+      function callMe() {
+        console.log("I am a callback function");
+      }
+
+      //passing function as an argument
+      greet("Ankit", callMe);
+
+      /***** Exampe2 *///
+
+  
+    </script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>addEvent Listners</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      width: 100%;
+    }
+
+    button {
+      background-color: orangered;
+      height: 10vh;
+      width: 15vw;
+      margin: 80px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button id="btnOne">click on btn1</button>
+    <button id="btnTwo">click on btn2</button>
+    <button id="btnThree">click on btn3</button>
+  </div>
+  <h2>Bye</h2>
+
+  <script>
+    // (1) Way to addEventListener => node.addEventListener (event, callback)  //
+    // (2) Way to removeEventListner => node.removeEventlistener (event, callback)  //
+
+    // btn1  (add Evenet Listner to button)
+    const btn1 = document.querySelector('#btnOne')
+    btn1.addEventListener('click', () => {
+      console.log('clicked on button-1');
+      alert('clicked on button-1')
+    });
+
+    // btn2 (add Evenet Listner to button)
+    // We can also access Event object By 
+    // node.addEventListener ('click', (evt)=>{})
+    const btn2 = document.querySelector('#btnTwo')
+    btn2.addEventListener("click", (evt) => {
+      alert('clicked on button-2 ')
+      console.log('Event object');
+      console.log(evt);
+      console.log(evt.type);
+      console.log(evt.target);
+      console.log(evt.timeStamp);
+      console.log(evt.clientX, evt.clientY);
+    });
+
+
+    // btn3 (add Evenet Listner to button)
+    const btn3 = document.querySelector('#btnThree')
+    btn3.addEventListener('dblclick', () => {
+      console.log('double clicked on button-3');
+      alert('double Clicked on button-3')
+    })
+
+    // Add Event listner to h2
+    const heading2 = document.querySelector('h2')
+    heading2.addEventListener('mouseover', () => {
+      heading2.innerHTML = 'Thank You'
+      heading2.style.backgroundColor = 'pink'
+      console.log('Mouse hover in h2');
+      
+    })
+
+    // Notes: EventListner ke through same event pe multiple kamm krwa skte hai. This is not possible in inline Event. To over come this problem we use => addEventListner('event', callback function)
+  </script>
+</body>
+
+</html>

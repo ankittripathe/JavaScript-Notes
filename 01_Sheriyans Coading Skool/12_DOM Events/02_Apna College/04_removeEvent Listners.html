@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> removeEvent Listners</title>
+  </head>
+  <body style="background-color: black; color: white">
+
+    <button id="btnOne">click-1</button>
+    <button id="btnTwo">click-2</button>
+
+    <script>
+      // node: removeEventlistener (event, callback)
+      // Notes: the callback reference should be same to remove.
+
+      let btn1 = document.querySelector("#btnOne");
+      btn1.addEventListener("dblclick", () => {
+        console.log("handler-1");
+      });
+
+      btn1.addEventListener("dblclick", () => {
+        console.log("handler-2");
+      });
+
+
+      // callback reference
+      const handler3 = ()=>{
+        console.log('handler-3');
+      }
+      btn1.addEventListener('dblclick', handler3) 
+    
+
+      // method-2nd  hoisting use huwa hai function declear hone ke pahle hi call kr skte hai.
+      // btn1.addEventListener('dblclick', handler3) 
+      // function handler3 (){
+      //   console.log('handler-3');
+      // }
+    
+
+      // Notes: the callback reference should be same to remove.
+      //  kaunsa remove krna hai usi ka reference pass krenge
+      btn1.removeEventListener('dblclick', handler3)
+
+
+
+
+
+    </script>
+  </body>
+</html>

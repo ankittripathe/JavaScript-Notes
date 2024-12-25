@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+}
+
+body {
+    font-family: sans-serif;
+    color: var(--primary-text-color);
+}
+
+p {
+    font-family: sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+   list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+   max-width: 1180px;
+   margin-inline:auto;
+   overflow: hidden;
+}
+
+nav {
+   background-color: #f3faff;
+   box-shadow: 0 0 4px #bbd0e2;
+   position: fixed;
+   top: 0;
+   z-index:99;
+   left: 0;
+   right: 0;
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+.company-logo img {
+    width:90px;
+    height: 70px;
+}
+
+.nav-links ul {
+    gap: 15px;
+}
+
+.hover-link:hover {
+    color: var(--secondary-text-color);
+}
+
+.hover-link:active {
+    color: red;
+}
+
+.search-bar {
+    height: 35px;
+    gap: 10px;
+}
+
+.news-input {
+    width: 200px;
+    height: 100%;
+    border-radius: 5px;
+    border: 2px solid #094b85;
+}
+
+.search-button {
+    background-color:var(--accent-color);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+}

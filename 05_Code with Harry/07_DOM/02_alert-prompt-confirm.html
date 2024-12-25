@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alert, Prompt, confirm</title>
+    <style>
+      body {
+        background-color: lightgreen;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      ol {
+        text-align: center;
+        list-style-type: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Browser console Method</h1>
+    <ol>
+      <li>alert</li>
+      <li>prompt</li>
+      <li>confirm</li>
+    </ol>
+
+    <script>
+      // alert
+      alert("Enter the value of a");
+
+      let a = prompt("Enter a here", "555");
+
+      a = Number.parseInt(a);
+
+      alert("you have enter a of type " + typeof a);
+      document.write(a);
+
+      // write
+      let write = confirm("Do you wnat to write");
+      if (write) {
+        document.write(a);
+      } else {
+        document.write(" Please allow me to write ");
+      }
+      console.log(" Hello jee Kaise ho sare");
+    </script>
+  </body>
+</html>

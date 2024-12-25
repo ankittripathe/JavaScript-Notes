@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pratice Set 5</title>
+</head>
+<body>
+    <script>
+      // Ques 1, 2, 3 same section  
+     //01.Create object to represet a product from Myntra
+     let product = {
+         name: 'Jeans',
+         size: 'S',
+         fit: 'Slim Fit',
+         'Delivery-time': 'Same day delivery'
+     };
+     //02. Create an Object with two references and log changes to one object by changing the other one.
+     let  copyProduct = product;
+     console.log(product); 
+
+     copyProduct.size = 'M'
+     console.log(product);
+
+     copyProduct.fit = 'Regular Fit'
+     console.log(product);
+
+     //03.use bracket notation to show delivery time
+     console.log(copyProduct['Delivery-time']);
+
+
+     //04.Given an object {message: 'good job', status: 'complete'}, use de-structuring to create two variables message and status.
+
+     let obj = {
+        message: 'good job',
+        status: 'completed'
+     }
+     console.log(obj);
+     //de-structure kr rha hu niche
+     let {message, status} = obj;
+     console.log(message)
+     console.log(status);
+
+     //05.Add function isidenticalproduct to compare two product objects
+
+     function isIdenticalProduct(product1, product2)
+     {
+       if(typeof product1 !== 'object' || typeof product2 !== 'object'){
+       console.warn('Parameter passed was no an Object');
+       return false;
+    }
+     if(product1 == product2){
+        return true;
+     }
+
+     if(product1.name === product2.name &&
+        product1.size === product2.size &&
+        product1.fit ===  product2.fit) {
+         return true;
+     }else {
+        return false;
+     }
+  }
+  
+    let product1 = {
+         name: 'Jeans',
+         size: 'S',
+         fit: 'Slim Fit',
+         'Delivery-time': 'Same day delivery'
+     };
+
+     let product2 = {
+         name: 'Jeans',
+         size: 'S',
+         fit: 'Slim Fit',
+         'Delivery-time': 'Same day delivery'
+     };
+
+     let product3 = {
+         name: 'Jeans',
+         size: 'S',
+         fit: 'Slim Fit',
+         'Delivery-time': 'Same day delivery'
+     };
+
+     console.log(isIdenticalProduct(product1, ''));
+     console.log(isIdenticalProduct(product1, product1));
+     console.log(isIdenticalProduct(product2, product1));
+     console.log(isIdenticalProduct(product3, product2));
+     console.log(isIdenticalProduct(product3, product3));
+     console.log(isIdenticalProduct(product, product2));
+
+    </script>
+</body>
+</html>

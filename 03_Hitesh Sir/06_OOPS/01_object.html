@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>OOPs</title>
+  </head>
+  <body style="background-color: black; color: beige">
+    <h1>OOPs(object oriented programming)</h1>
+    <h3>Object => Collection of key & value pair.</h3>
+    <h3>Object => Collection of properties & methods.</h3>
+    <h4>
+      Parts of OOP
+      <ol>
+        <li>- constructor function</li>
+        <li>- prototypes(proto)</li>
+        <li>- Classes</li>
+        <li>- Instances (new, this)</li>
+      </ol>
+    </h4>
+
+    <script>
+      // Example.1 ******/
+      let user = {
+        // properties
+        username: "Ankit",
+        loginCount: 7,
+        signedIn: true,
+
+        // method
+        getUserDetails: function () {
+          // console.log("Got User details");
+          // console.log(`UserName: ${username}`);       // error
+          console.log(`UserName: ${this.username}`);
+          console.log(this); //  same object
+        },
+      };
+      // console.log(user);
+      // console.log(user.name);
+      // console.log(typeof user);
+      console.log(user.getUserDetails());
+      console.log(this);
+      /* node environment me:- console.log(this) ka output = {}.
+        Browser me:- console.log(this) window object milta hai jo ki global object hai */
+    </script>
+  </body>
+</html>

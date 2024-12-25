@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Object ke ander object</title>
+</head>
+<body>
+    <script>
+        let product = {
+            Company: 'zomato',
+            price: 999,
+            'item-Name': 'T-shirt',
+            displayPrice: function(){
+             console.log(`price of the product is ${this.price}`)
+            }
+        };
+        product.displayPrice();
+    </script>
+</body>
+</html>

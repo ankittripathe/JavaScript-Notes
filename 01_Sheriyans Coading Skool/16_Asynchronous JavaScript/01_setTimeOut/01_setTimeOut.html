@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setTimeOut:- ansynchronous JavaScript</title>
+  </head>
+  <body style="background-color: black; color: white; text-align: center">
+    <h3>
+      setTimeout :- setTimeout is a JavaScript function that execute/run
+      provided callback function after a specified delay (in milliseconds).
+    </h3>
+
+    <h3>It is asynchronous and does not block the execution of the code.</h3>
+
+    <h3>
+      Instead, it schedules the callback to run after the delay, allowing other
+      operations to continue.
+    </h3>
+
+    <h3>Syntax:- setTimeout(callback, delay, ...args);</h3>
+    <h2>setTimeOut:- settimeout ka code kuch der baad chalta hai.</h2>
+
+    <script>
+      // (1) using Normal function
+      setTimeout(function () {
+        console.log("will print after 2 second");
+      }, 1000);
+
+      // (2) using Arrow function
+      setTimeout(() => {
+        console.log("This message appears after 4 seconds");
+      }, 2000);
+
+      // (3) callback function without arguments:- Noraml function
+      function greet() {
+        console.log("hello");
+      }
+      setTimeout(greet, 4000);
+
+      // (3) callback function without arguments:- arrow function
+      const details = () => {
+        console.log("I am setTimeout with arrow function");
+      };
+      setTimeout(details, 5000);
+
+      // (4) Callback function:-  with arguments passsed
+      function intro(name, age) {
+        console.log(`My name is ${name}, I am ${age} years old`);
+      }
+      setTimeout(intro, 2000, "Ektu", 23);
+
+      // (5) setTimeout :- with 0 delay
+      function sayhello() {
+        console.log("hello Good Morning");
+      }
+      setTimeout(sayhello, 0); // no delay
+
+      // (6) setTimeOut:- In object
+      const person = {
+        name: "Harsh",
+        greet: function () {
+          setTimeout(() => {
+            console.log(`Hello, ${this.name}`);
+          }, 6000);
+        },
+      };
+      person.greet(); // output:- Hello, Harsh (after 6 second)
+
+      //! Using clearTimeout to Cancel:- setTimeout
+      const timeoutId = setTimeout(() => {
+        console.log("This message will not appear");
+      }, 5000);
+      clearTimeout(timeoutId); // Cancel the timeout
+    </script>
+  </body>
+</html>

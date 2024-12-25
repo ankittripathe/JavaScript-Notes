@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Events (Inline Events)</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        div {
+            height: 30vh;
+            width: 25%;
+            background-color: orange;
+            margin: auto;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--(1) onclick -->
+    <button onclick="console.log('button 1st was clicked');">Button 1</button>
+
+    <button onclick="console.log('button 2nd was clicked'); alert('Hello')">Button 2</button>
+
+    <!--(2) ondblclick -->
+    <button ondblclick="console.log('2X clicked'); alert('double clicked ')">clicked 2x</button>
+
+    <!--(3) onmouseover -->
+    <div onmouseover="console.log('you are inside div');">This is a box</div>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>removeEvent Listener</title>
+  <style>
+    body {
+      background-color: gray;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      width: 100%;
+    }
+
+    button {
+      background-color: orangered;
+      height: 10vh;
+      width: 15vw;
+      margin: 80px;
+      border: none;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <!-- <button>click me</button> -->
+    <button id="One">click on btn1</button>
+    <button id="Two">click on btn2</button>
+    <button id="Three">click on btn3</button>
+  </div>
+
+  <script>
+    // node.removeEventlistener (event, callback function)
+    // Notes: the callback reference should be same to remove
+
+
+    // **** For btn1 ****//
+    function handler1(){
+      alert('btn1 clicked')
+      console.log('btn1 clicked');
+    }
+
+    // Add Event Listner
+    const btn1 = document.querySelector('#One')
+    btn1.addEventListener('click', handler1)
+
+    // Remove Event Listner
+    btn1.removeEventListener('click', handler1)
+  
+
+    //**** For btn2 *****//
+    const handler2 = () =>{
+      alert('btn2 clicked')
+    }
+
+    // Add Event Listner
+    const btn2 = document.querySelector('#Two')
+    btn2.addEventListener('dblclick', handler2)
+
+    // Remove Event Listner
+    btn2.removeEventListener('dblclick', handler2)
+
+
+
+    // **** For btn3 ****//
+    const handler3 = () =>{
+      alert('mouse hover on btn3')
+    }
+
+    // Add Event Listner
+    const btn3 = document.querySelector('#Three')
+    btn3.addEventListener('mouseover', handler3)
+
+    
+  </script>
+</body>
+
+</html>

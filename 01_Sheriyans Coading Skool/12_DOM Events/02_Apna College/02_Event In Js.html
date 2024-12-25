@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>DOM(Events in js)</title>
+    <style>
+      div {
+        height: 100px;
+        width: 100px;
+        background-color: burlywood;
+      }
+      p {
+        height: 100px;
+        width: 200px;
+        background-color: rgb(212, 123, 7);
+      }
+      h5 {
+        background-color: salmon;
+        padding: 10px;
+      }
+      button{
+        margin: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">click me</button>
+    <div>This is Box</div>
+    <p>This is paragraph</p>
+    <h5>The End</h5>
+
+    <script>
+      // button
+      let btn1 = document.getElementById("btn");
+      btn1.onclick = () => {
+        console.log("Handler 1");
+      };
+
+      // OverWrite 2nd One Always
+      btn1.onclick = () => {
+        console.log("Handler 1 overWrite");
+      };
+
+
+      // div
+      let divs = document.querySelector("div");
+      divs.onmouseover = function () {
+        console.log("you are inside div => mouseOver");
+      };
+
+
+      // p
+      // with Event object = (evt) =>{}
+      let para = document.querySelector("p");
+      para.onclick = (evt) => {
+        console.log(evt);
+        console.log(evt.type);
+        console.log(evt.target);
+        console.log(evt.clientX, evt.clientY);
+      };
+
+      // h5
+      let h = document.querySelector("h5");
+      h.onmouseover = (evt) => {
+        console.log(evt);
+        console.log(evt.target);
+        console.log(evt.type);
+      };
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM (Method of selecting Elements)</title>
+  <style>
+    body {
+      background-color: lightslategrey;
+    }
+  </style>
+</head>
+<body>
+  <h1>Method of Selecting Elements</h1>
+
+  <div>JavaScripts!</div>
+
+  <h1 id="myId1">Document Object Model(DOM)</h1>
+
+  <h2 id="myId2">Happy Learning JavaScripts</h2>
+
+  <h5 class="hero random">Learn What Matters</h5>
+
+  <h5 class="hero random">Access by className</h5>
+
+  <h5 class="hero">Topic1: Starter code</h5>
+
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <p>Paragraph 3</p>
+
+
+  <button>Click-1</button>
+  <button>Click-2</button>
+  <button>Click-3</button>
+  <button>Click-4</button>
+
+  <!-- id => unique (#)   -->
+  <!-- class => one or more (.) -->
+  <script>
+    //*** Method of Selecting Elements ***//
+
+    // (1) getElementById('')  //
+    // (a) Without storing in Variable or direct method
+    document.getElementById('myId1').style.backgroundColor = 'orange'  
+
+
+    // (b) By stroing in Variable
+    const heading1 = document.getElementById("myId1"); 
+    console.log(heading1);
+    console.dir(heading1);   // can seen property & methods in console browser
+
+    // Example.1
+    heading1.style.backgroundColor = "green";
+    heading1.style.borderRadius = "20px 0px 20px 0px";
+    heading1.style.textAlign = "center";
+    heading1.style.padding = "30px 40px";
+
+    // Example.2
+    const heading2 = document.getElementById("myId2");
+    console.log(heading2);
+    
+    heading2.style.backgroundColor = "yellow";
+    heading2.style.borderRadius = "0px 10px 0px 10px";
+    heading2.style.padding = "20px";
+
+
+    // (2) getElementsByClassName('') => HTML collection dega  //
+    const klass = document.getElementsByClassName("hero");
+    console.log(klass);
+
+    klass[0].style.backgroundColor = "tomato";
+    klass[0].innerHTML = "getElementsByClassName()";
+    klass[0].style.padding = '10px'
+
+    klass[1].style.backgroundColor = "green";
+    klass[2].style.backgroundColor = "red";
+
+
+    // (3) getElementsByTagName('') => HTML Collection dega  //
+    const para = document.getElementsByTagName("p");
+    console.log(para);
+
+    para[0].style.backgroundColor = "blue";
+    para[0].innerHTML = 'Three'
+
+    para[1].style.backgroundColor = "pink";
+    para[1].innerHTML = 'Two'
+
+    para[2].style.backgroundColor = "maroon";
+    para[2].innerHTML = 'One'
+
+
+    // (4) querySelector('') => select only first Elements //
+    const firstElm = document.querySelector("button");
+    console.log(firstElm);
+
+    firstElm.style.padding = '21px'
+    firstElm.style.borderRadius = '8px'
+    firstElm.style.border = 'none'
+
+
+    // (5) querySelectorAll('') => Give Nodelist //
+    let allElm = document.querySelectorAll("button");
+    console.log(allElm);
+
+    allElm[0].style.backgroundColor = "aqua";
+    allElm[1].style.backgroundColor = "orangered";
+    allElm[2].style.backgroundColor = "salmon";
+    allElm[3].style.backgroundColor = "red";
+
+
+    // (6) querySelector('.myclass') => querySelector using class (only first element select hoga) //
+    const firstElements = document.querySelector(".hero");
+    console.log(firstElements);
+
+
+    // (7) querySelectorAll('.myclass') => querySelectorAll using class {all elements are selected (nodelist)}
+    const allElements = document.querySelectorAll(".hero");
+    console.log(allElements);
+
+    // (8) querySelector('#myid') => querySelector using Id //
+    const firstElement = document.querySelector("#myId1");
+    console.log(firstElement);
+
+
+    // (9) querySelectorAll('#myId') => querySelectorAll using Id doesnot make any sense because Id are unique always & are not applied to all //
+  </script>
+</body>
+
+</html>

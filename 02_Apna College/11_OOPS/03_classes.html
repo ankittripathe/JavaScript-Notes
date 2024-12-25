@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>classes In JS</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      /* text-align: center; */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Classes In js</h1>
+
+  <h3>Class is introduced in ES-6</h3>
+
+  <h3>
+    In JavaScript, a class is a blueprint for creating objects that share common properties and methods.
+  </h3>
+
+  <h3>
+    A class in JavaScript is defined using the class keyword, followed by the class name. The class body is defined
+    within curly braces {} and contains the properties and methods of the class.
+  </h3>
+
+
+  <h3>You can create an instance of a class using the new keyword.</h3>
+
+
+  <!-- stntax
+        class myClass {
+           constructor() {
+            /// Initialize properties
+          }
+            
+            method() {
+             console.log('This is a method');
+           }
+       }
+     const myObj = new myClass();   // this is the way to convert class in object.
+  -->
+
+  <script>
+    class ToyotaCar {
+      start() {
+        return 'car start ho gaya'
+      }
+
+      stop() {
+        return 'car stop ho gaya'
+      }
+    };
+    console.log(ToyotaCar)
+
+    //*** Way to convert class in object:- const myObject = new myClass()  ***//
+
+    // (1) Creating object (fortuner)
+    const fortuner = new ToyotaCar();      // creating an instance of a class 
+    console.log('fortuner =', fortuner);
+    console.log(typeof fortuner);
+    console.log(fortuner.start());
+    console.log(fortuner.stop());
+
+    // (2) Creating object (safari)
+    const safari = new ToyotaCar();
+    console.log('safari =', safari);
+    console.log(typeof safari);
+    console.log(safari.start());
+    console.log(safari.stop());
+
+  </script>
+</body>
+</html>

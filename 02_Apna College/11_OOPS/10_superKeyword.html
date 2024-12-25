@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Super keyword(part-1)</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <h1>Super Keyword</h1>
+    <p>
+      The super keyword is used to call the instructor of its parent class to
+      acess the parent's properties and methods
+    </p>
+
+    <script>
+      /*syntax
+        supe(args) // calls parent's constructor
+
+        super.parentMethod(args)
+        */
+
+      class person {
+        constructor() {
+          console.log("enter parent constructor");
+          this.species = "homo sapiens";
+        }
+
+        eat() {
+          console.log("eat");
+        }
+      }
+
+      class Engineer extends person {
+        constructor(branch) {
+          console.log("enter child constructor");
+          super(); //to invoke parent class constructor
+          this.branch = branch;
+          console.log("exit child constructor");
+        }
+        work() {
+          console.log("solve problems, bulid somethings");
+        }
+      }
+
+      let engObj = new Engineer("computer Engineer");
+      console.log(engObj);
+    </script>
+  </body>
+</html>

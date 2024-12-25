@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM (getElementById)</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-black">
+      <h1 id="title" class="heading">
+        DOM Learning On Chai aur Code
+        <span style="display: none">test textContant</span>
+      </h1>
+      <p>Lorem, ipsum dolor sit amet !</p>
+    </div>
+
+    <script>
+      let tietal = document.getElementById("title");
+      tietal.style.backgroundColor = "salmon";
+      tietal.style.padding = "15px";
+      tietal.style.borderRadius = "20px 10px";
+
+      // console.log(tietal.innerHTML);       // print with html tags if inside there 
+      console.log(tietal.innerText);          // print only pure text.
+      console.log(tietal.textContent);        // hidden part also printed.
+    </script>
+  </body>
+</html>

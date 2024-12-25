@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratice Set-2</title>
+  <style>
+    p {
+      color: red;
+    }
+
+    .content {
+      color: green;
+    }
+
+    .newClass {
+      background-color: orangered;
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Ques.1 
+     Create a new button element. Give a text 'click me', background color of red & text color if white.
+     Insert the button as the first element inside the body tag 
+    -->
+
+  <!-- Ques.2
+      Create a <p> tag in Html, give it a class & some styling.
+      Now Create a new class in CSS and try to append this class to the <p> element.
+      Did you notice, how you overWrite the class name when you add a new one ?
+      Solve this problem using classList
+   -->
+
+  <p class ="content">I am paragraph</p>
+
+  <script>
+    // solution (1)
+    const newBtn = document.createElement("button");
+    newBtn.innerHTML = "click me";
+    newBtn.style.backgroundColor = "red";
+    newBtn.style.color = "white";
+
+    document.querySelector("body").prepend(newBtn);
+
+
+    // solution (2)
+    const para = document.querySelector('p')
+    // para.setAttribute('class', "newClass")  // This will overWrite old class
+
+    // Add classList
+    para.classList.add('newClass')
+    // console.log(para.classList());
+
+    // remove ClassList
+    // para.classList.remove('newClass')
+    // para.classList.remove('newClass', 'content')
+
+
+
+  </script>
+</body>
+
+</html>

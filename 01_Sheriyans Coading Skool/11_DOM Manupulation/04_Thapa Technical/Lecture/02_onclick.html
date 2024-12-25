@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM(onclick Events =>Location/ history)</title>
+    <style>
+      button {
+        background-color: darkgoldenrod;
+        border-radius: 10px;
+        border: none;
+        padding: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Start Window Property  -->
+    <h1>JS Window Object</h1>
+    <button onclick ="window.open('https://www.w3schools.com/','_blank' )">
+      Navigation
+    </button>
+
+    
+    <!-- Start History -->
+    <h1>JavaScripts History Object</h1>
+    <button onclick="history.back()">Go Back</button>
+    <button onclick="history.forward()">Go Forward</button>
+    <button onclick="history.go(-1)">Move Backward or Forward</button>
+
+    <!-- history wala page avi kamm nhi krega kauki avi koie back aur forward jake ke liye page nhi hai koie-->
+
+    <!-- Start location -->
+    <h1>JavaScripts Location object</h1>
+    <button onclick="location.reload()">Reload the page</button>
+    <button
+      onclick="location.replace('https://developer.mozilla.org/en-US/docs/Web/JavaScript')"
+    >
+      Navigate page using replace
+    </button>
+    <button onclick="location.assign('https://github.com/')">
+      Navigate page with Assign
+    </button>
+
+    <script>
+      // alert("Hello");
+    </script>
+  </body>
+</html>

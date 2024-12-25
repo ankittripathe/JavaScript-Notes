@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom Lecture</title>
+    <style>
+      h5 {
+        height: 70px;
+        width: 300px;
+        background-color: salmon;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Dom-Events</h1>
+    <h2>Learn What Matter's</h2>
+
+    <script>
+      // 1. Events Listner
+      var a = document.querySelector("h1");
+      a.addEventListener("click", function () {
+        a.innerHTML = "Learn What Matter's: EventsListner Topics";
+        a.style.backgroundColor = "yellow";
+        a.style.color = "black";
+        a.style.borderRadius = "10px";
+        a.style.padding = "10px";
+      });
+
+      // 1. Events Listner using (Arrow function).
+      // var a = document.querySelector("h1")
+      // a.addEventListener('click', ()=>{
+      //   a.innerHTML = "EventListner Topic";
+      //   a.style.backgroundColor = "yellow";
+      //   a.style.color = "black";
+      //   a.style.borderRadius = "10px";
+      //   a.style.padding = "30px";
+      // })
+
+    </script>
+  </body>
+</html>

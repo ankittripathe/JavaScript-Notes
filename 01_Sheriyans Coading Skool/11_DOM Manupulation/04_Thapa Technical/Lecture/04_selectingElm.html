@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM()</title>
+  </head>
+  <body>
+    <div>
+      <h1 id="heading1">DOM API</h1>
+      <ul class="list-of-nodes">
+        <li>Node 1</li>
+        <li>Node 2</li>
+        <li>Node 3</li>
+        <!--  -->
+        <li>Node 4</li>
+        <li style="display: none">Node 5</li>
+      </ul>
+    </div>
+
+    <div>
+      <h1 id="heading2">DOM API2</h1>
+      <ul>
+         <li>Home</li>
+         <li>About</li>
+         <li>Contact</li>
+     </ul>
+      <input type="text" />
+      <button>Click me</button>
+    </div>
+
+    <script>
+        // 1. getElementById()
+        let ById = document.getElementById('heading1')
+        // console.log(ById);
+        // console.log(ById.innerHTML);
+        // console.log(ById.innerText);
+        // console.log(ById.textContent);
+
+
+
+        // 2. getElementsByClassName
+        let ByClassName = document.getElementsByClassName('list-of-nodes')
+        // console.log(ByClassName);
+
+        for(let elem of ByClassName){
+            // console.log(elem);
+            // console.log(elem.innerHTML);
+            // console.log(elem.innerText);
+            // console.log(elem.textContent); //textcontent me css apply nhi hota hai Esliye node 5 vi show kr rha
+            elem.style.backgroundColor = 'salmon'
+            elem.style.padding = '50px'
+            elem.style.borderRadius ='20px 5px 20px 5px'
+        }
+
+        // collection ko change krne ke liye loop ko use krna padega => class, li  , a, h
+
+
+
+        // 3. getElementByTagName
+        let ByTagName = document.getElementsByTagName('li')
+        console.log(ByTagName);
+
+        for(let name of ByTagName){
+            // console.log(name);
+            // console.log(name.innerHTML);
+            // console.log(name.innerText);
+            // console.log(name.textContent); //textcontent me css apply nhi hota hai Esliye node 5 vi show kr rha
+            name.style.backgroundColor = 'aqua'
+            name.style.padding = '10px'
+            name.style.borderRadius ='20px 5px 20px 5px'
+        }
+
+
+        // 4. quertSelector
+        let query = document.querySelector('#heading2')
+        // console.log(query);
+        // console.log(query.innerHTML);
+        // console.log(query.innerText);
+        // console.log(query.textContent);
+        query.innerHTML = 'World Best Js Course'
+
+
+        // 5. querySelectorAll
+        let all = document.querySelectorAll('li')
+        console.log(all);
+
+        // for(let check of all){
+        //     console.log(check);
+        //     check.innerHTML ='red'
+        //     // check.style.color = 'yellow'
+        //     check.style.fontSize = '30px'
+        // }
+        
+        // forEach loop se
+        all.forEach((curElm =>{
+            curElm.style.color = 'blue'
+            curElm.style.fontWeight = '900'
+        }))
+
+
+      
+
+
+    </script>
+  </body>
+</html>

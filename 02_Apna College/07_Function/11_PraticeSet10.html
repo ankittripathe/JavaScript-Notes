@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>praticeSet-10</title>
+</head>
+
+<body>
+  <h1 style="text-align: center;">PraticeSet-10</h1>
+
+
+  <script>
+    // Ques.1 We are given array of marks of students. Filter out of the marks of students that Scored 90+ 
+
+    let marks = [77, 48, 92, 57, 97, 95];
+
+    let toppers = marks.filter((number) => {
+      return number > 90;
+    });
+    console.log(toppers);  // output: [92, 97, 95]
+
+
+    // Ques.2 Take a number n as input from user. Create array of numbers from 1 to n.
+    // (a) Use the reduce method() to Calculate Sum of all numbers in the Array.
+    // (b) Use the reduce method() to Calculate Product of all numbers in the Array.
+
+    let n = prompt('Enter a number')
+
+    let array = [];
+    for (i = 1; i <= n; i++) {
+      // array[i - 1] = i;
+      array.push(i)
+    }
+    console.log(array);  // output:
+
+
+    // (a) sum of the given number
+    let sum = array.reduce((preVal, currentVal) => {
+      return preVal + currentVal;
+    });
+    console.log('sum =', sum);
+
+    // (b) product / factorial of the given Array
+    let Product = array.reduce((preVal, currentVal) => {
+      return preVal * currentVal;
+    });
+    console.log('factorial =', Product);
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prototype(part-1)</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <h1 style="text-align: center">(ProtoType)</h1>
+    <h2>
+      A javaScripts objects is an entity having state and behaviour(properties &
+      method)
+    </h2>
+    <h3>JS objects have a special property called prototype.</h3>
+    <h4>We can set prototype using __proto__</h4>
+    <script>
+      /* We can set prototype using =>  __proto__
+         => jis object ke properties & method  ko hum use krna chahte hai unko ham dusri ka
+            prototype set krdenge
+         => prototype apne aap me Ek object hai 
+       */
+
+      /**** Example.1 ****/ // prototype inheritance
+      const user = {
+        name: "Ankit",
+        email: "ankit@google.com",
+      };
+
+      const Teacher = {
+        makeVideo: true,
+      };
+
+      const TeachingSupport = {
+        isAvailable: false,
+      };
+
+      const TASupport = {
+        makeAssignmnet: "JS Notes",
+        fullTime: true,
+      };
+
+      Teacher.__proto__ = user;
+      console.log(Teacher.makeVideo); // true
+
+      // modern Syntax
+      Object.setPrototypeOf(TeachingSupport, user); // TeachingSupport me teacher ka prototype set kr diya.
+      console.log(TeachingSupport.name); // output:- Ankit
+
+      // /***** Example.2  *****/
+      // const worker = {
+      //   taxRate() {
+      //     console.log("tax rate of worker is 10%");
+      //   },
+      // };
+
+      // const skilledEmployee = {
+      //   salary: 50000,
+      //   taxRate() {
+      //     console.log("tax rate of jadega is 20% ");
+      //   },
+      // };
+
+      // refernece to an Object. Object ka reference pass ho jaega dusre wale me
+      // we can set prototype => currObj.__proto__ = oldObj (whose function & properties is going to use)
+      // skilledEmployee.__proto__ = worker;
+
+      // console.log(skilledEmployee);
+      // console.log(skilledEmployee.salary);
+      // console.log(skilledEmployee.taxRate());
+
+      // /* Notes: If object & prototype have same method, object's method will be used.
+      //      i.e: Apne object me same method present hai aur prototype ka vi use kiya gaya hai.
+      //        => then first priority will be given to object method.)
+      // */
+    </script>
+  </body>
+</html>

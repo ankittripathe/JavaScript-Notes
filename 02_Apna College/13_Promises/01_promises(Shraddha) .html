@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Promises</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <h1>Promises</h1>
+    <h2>
+      promises is for "eventual" completion of task. It ia an object in Js
+    </h2>
+    <h3>It is a solution to callback Hell</h3>
+
+    <!-- let promise = new Promise((resolve, reject)=> {}) -->
+    <!-- let promise = new Promise(function (resolve, reject) {}) -->
+    <!-- resolve & reject are callbacks provided by JS -->
+
+    <script>
+      /* Syntax 
+     let myPromise = new Promise((resolve, reject)=> {})
+
+     myPromise.then((result) =>{
+        // code
+     }).catch((error) =>{
+        // code
+     })
+
+     There are 3 state of promise
+       (1) pending
+       (2) fullfilled
+       (3) rejected
+    */
+
+      // Example.1
+      let promise1 = new Promise((resolve, reject) => {
+        console.log("promise-1");
+      });
+      console.log(promise1);
+       /*
+       PromiseState: pending
+       promiseResult: undefined
+    */
+
+
+      // Example.2:- resolve()
+      let promise2 = new Promise((resolve, reject) => {
+        console.log("resolve-1, with undefined type");
+        resolve();
+      });
+      console.log(promise2);
+      console.log(typeof promise2); // output:- object
+
+      /*
+       PromiseState: fullfilled
+       promiseResult: undefined (koie vi value assign nhi huwa hai)
+    */
+
+      // Example.3:- resolve('abc')
+      let promise3 = new Promise((resolve, reject) => {
+        console.log("resolve-2, with defined type");
+        resolve("Your Order is Sucessfully Placed");
+        // resolve(123);
+      });
+      console.log(promise3);
+      /*
+       PromiseState: fullfilled
+       promiseResult: Your Order is Sucessfully Placed
+    */
+
+      // Example.4:- resolve(123)
+      let promise4 = new Promise((resolve, reject) => {
+        resolve(100);
+        // resolve('sucessfull');
+      });
+      console.log(promise4);
+      /*
+       PromiseState: fullfilled
+       promiseResult: 100
+    */
+
+      // Example.5:- reject()
+      let promise5 = new Promise((resolve, reject) => {
+        console.log("I am reject-1");
+        reject();
+      });
+      console.log(promise4);
+      /*
+       PromiseState: rejected
+       promiseResult: undefined
+       // jab reject hoga toh console me red color ka cross dega (uncatch) //
+    */
+
+      // Example.6:- reject()
+      let promise6 = new Promise((resolve, reject) => {
+        console.log("I am reject");
+
+        reject("server error");
+      });
+      console.log(promise6);
+
+      // Example.7:- reject()
+      // let promise7 = new Promise((resolve, reject) => {
+      //   reject("not found");
+      // });
+      // console.log(promise7);
+
+      /****************************************************************************************/
+
+      /***** Example.8 (function ke ander rakh ke promise ko return kiya gaya hai) *****/
+      // const getPromise = () => {
+      //   if (true) {
+      //     return new Promise((resolve, reject) => {
+      //       console.log("I am Promise");
+      //       resolve("Success");
+      //     });
+      //   } else {
+      //     return new Promise((resolve, reject) => {
+      //       console.log("I am Promise");
+      //       reject("Network Error");
+      //     });
+      //   }
+      // };
+
+      // let promise = getPromise(); // notes: function call here
+      // promise
+      //   .then((data) => {
+      //     console.log("promise consumed", data);
+      //   })
+      //   .catch((err) => {
+      //     console.log("Error", err);
+      //   });
+
+      // notes: function call here Directly
+      // getPromise()
+      // .then((data) => {
+      //   console.log("promise consumed", data);
+      // }).catch((err) => {
+      //   console.log('Error', err);
+      // });
+
+      /*************** promise Chaning  ******************/
+      // Example. 1
+      // function asyncFun1(){
+      //   return new Promise((resolve, reject)=>{
+      //      setTimeout(() => {
+      //        console.log('data1');
+      //        resolve('Success')
+      //      }, 3000);
+      //   })
+      // }
+
+      // function asyncFun2(){
+      //   return new Promise((resolve, reject)=>{
+      //      setTimeout(() => {
+      //        console.log('data2');
+      //        resolve('Success')
+      //      }, 3000);
+      //   })
+      // }
+
+      // console.log('fetching data1.....');
+
+      // let p1 = asyncFun1()
+      // p1.then((result)=>{
+      //   console.log(result);
+      //   console.log('fetching data2....');
+      //   let p2 = asyncFun2()                   //usi ke ander call kr rhe hai promise 2 ko vi
+      //   p2.then((result) => {
+      //       console.log(result);
+      //   });
+      // });
+
+      // Example.2
+      // function getUserData1() {
+      //   return new Promise((resolve, reject) => {
+      //     resolve({ user1: 'Ankit' })
+      //   })
+      // }
+
+      // function getUserData2() {
+      //   return new Promise((resolve, reject) => {
+      //     reject('Fail to Login')
+      //   })
+      // }
+      // console.log('fetching data1....');
+
+      // let promise1 = getUserData1()
+      // promise1.then((result) => {
+      //   console.log(result);
+      //   console.log('fetching data2...');
+      //   // Esi ke ander function 2(promise 2) wala call huwa hai neeche => promise chaning
+      //   promise2 = getUserData2()
+      //   promise2.then((result) => {
+      //     console.log(result);
+      //   }).catch((err) => {
+      //     console.log('Error', err);
+      //   })
+      // })
+    </script>
+  </body>
+</html>

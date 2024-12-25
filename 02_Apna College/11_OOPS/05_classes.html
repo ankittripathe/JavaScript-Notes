@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classes In JS(part-2)</title>
+</head>
+
+<body style="background-color: black; color: aliceblue">
+  <h1 style="text-align: center">Classes In jS</h1>
+
+  <!-- stntax
+        class Myclass {
+            myConstractor(){}
+            mymethod(){}
+        }
+
+     let myObj = new Myclass();     // this is the way to convert class in object.
+     -->
+
+  <script>
+    class ToyotaCar {
+      start() {
+        console.log("start");
+      }
+
+      stop() {
+        console.log("stop");
+      }
+
+      setBrand(brand) {                // this.brand ke sath waala object ki property hai 
+        this.brandName = brand;     // brand jo hai khali ko parametr ke tarah kamm kr rha hai
+      }
+
+      setPrice(parameter) {
+        this.priceRange = parameter;       // parameter me jo argumnets se aaega 200k
+      }
+    }
+
+    ///
+    let fortuner = new ToyotaCar();
+    // fortuner.setBrand('fortuner')
+    fortuner.setBrand = 'fortuner'
+    console.log(fortuner);
+
+
+    ///
+    let safri = new ToyotaCar()
+    safri.setPrice('200k')
+    console.log(safri);  
+  </script>
+</body>
+
+</html>

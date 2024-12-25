@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM(setAttribute)</title>
+</head>
+  <div id="box" class="hero" name ='Ankit'>This is a div</div>
+  <p class="paragraph">This is Paragraph</p>
+  <h5>Best of Luck</h5>
+
+ <script>
+    /***** 2.setAttributes(attr, value) => to set the attribute & value  *****/
+
+    // Example.1
+    let para = document.querySelector('p')
+    //Agar existing attributes hoga toh value overWrite kr dega. Aur agar existing attributes nhi hoga toh new create kr dega aur value set kr dega.
+    console.log(para.setAttribute('class','newClass')); 
+    console.log(para.setAttribute('class','newClass love'));   // class me multipe value de skte hai.
+
+    console.log(para.setAttribute('name', 'Ram'));  // new create and set value vi kr skte hai
+    console.log(para.setAttribute('id', 'demo'));   // new create and set value
+
+    //Exmapele 2
+    let heading = document.querySelector('h5')
+    var setAtt = heading.setAttribute('class','last-heading')
+    console.log(setAtt);
+    console.log(heading.setAttribute('id', 'unknown'));  // without using variable
+    
+
+
+
+
+
+
+ </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body> 
+    <h1>JavaScripts</h1>
+    <p>Lorem ipsum dolor sit.</p>
+    <p>Lorem ipsum dolor consectetur adipisicing elit</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing.voluptatibus?</p>
+
+    <script>
+      console.log(document.body.firstChild);                           // #text
+      console.log(document.body.firstElementChild);                    // <h1>JavaScripts</h1>
+      console.log(document.body.firstElementChild.nodeName);           // H1
+   
+
+      // When a <script> tag is placed at the end of the <body>, it often becomes the last child node.
+      console.log(document.body.lastChild);                            // <Scripts></Scripts> 
+      console.log(document.body.lastElementChild);                     // <Scripts></Scripts>
+      console.log(document.body.lastElementChild.nodeName);            //  SCRIPTS
+
+
+      console.log(document.body.childNodes);                           // nodeList
+      console.log(document.body.children);                             // html collection
+
+
+      console.log(document.body.nextSibling);                          // null
+      console.log(document.body.nextElementSibling);                   // null
+
+
+      console.log(document.body.previousSibling);                     // #text
+      console.log(document.body.previousElementSibling);              // head
+
+
+
+      console.log(document.body.firstChild.nextSibling);            // <h1>javaScripts</h1>
+      console.log(document.body.firstChild.nextElementSibling);     // <h1>javaScripts</h1>
+
+      
+      console.log(document.body.firstElementChild.nextSibling);          // #text
+      console.log(document.body.firstElementChild.nextElementSibling);   // <p></p>
+
+
+
+      console.log(document.body.firstChild.previousSibling);             // null
+      console.log(document.body.firstChild.previousElementSibling);      // null
+
+
+      console.log(document.body.firstElementChild.previousSibling);          // #text
+      console.log(document.body.firstElementChild.previousElementSibling);   // null
+
+    </script>
+  </body>
+</html>

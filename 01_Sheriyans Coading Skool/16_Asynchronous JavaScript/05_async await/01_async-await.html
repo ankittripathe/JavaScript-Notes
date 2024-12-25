@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>async-await:- Asynchronous JavaScripts</title>
+  </head>
+  <body>
+    <h1>Synchronous:- stored in Main stack</h1>
+    <h1>Asynchronous: stored in Side stack</h1>
+    <h2>Async-Await:- async function always return a promise</h2>
+    <h2>Syntax:- async function myFunc(){....}</h2>
+    <h2>
+      Await:- A keyword used to pause the execution of an async function until
+      the Promise is settled (either resolved or rejected).
+    </h2>
+
+    <ul>
+      Benefits of Using Async-Await:-
+      <li>
+        (1) Async-Await ka use hum krte hai Asynchronous ko Synchronous ki tarah
+        Behave krwane ke liye.
+      </li>
+
+      <li>
+        (2) With Async-Await aap Synchronous code bhi aise likh skte ho jaise ki
+        aap noraml Synchronous code likhe rahe ho.
+      </li>
+
+      <li>
+        (3) Await ka matalb hai agli line tab ka na execute kro jabtak agle ka
+        answer na aa jaye.
+      </li>
+
+      <li>
+        (4) Await ko work krwane ke liye Await ke parent function me Async
+        lagana padega.
+      </li>
+    </ul>
+
+    <script>
+      let body = document.body;
+      body.style.backgroundColor = "black";
+      body.style.color = "white";
+    </script>
+
+    <script src="01_async-await.js"></script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM (getElementsByClassName)</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="bg-black">
+      <h1 id="title" class="heading">DOM Learning On Chai aur Code</h1>
+      <h2>Lorem, ipsum dolor</h2>
+      <h2>Lorem, ipsum dolor</h2>
+      <h2>Lorem, ipsum dolor</h2>
+      <h2>Lorem, ipsum dolor</h2>
+      <p>Lorem, ipsum</p>
+      <input type="password" />
+
+      <ul>
+        <li class="list-item">One</li>
+        <li class="list-item">Two</li>
+        <li class="list-item">Three</li>
+        <li class="list-item">Four</li>
+      </ul>
+    </div>
+
+    <script>
+      let tempClassList = document.getElementsByClassName("list-item");
+      console.log(tempClassList);
+      // Prototype = >Method me jake dekhna padega Nodelist jo de rha hai usme looping ka option hai ya nahi=> browser ke console me dekna hota hai.
+      // Agar nhi hoga toh usko Array me chanege krna padega
+
+      tempClassList[0].style.color = 'orange'
+      tempClassList[1].style.color = 'grey'
+      tempClassList[2].style.color = 'green'
+
+      // console.log(Array.from('ankit'));    convert kr dega Arrya me 
+
+      let myConvertedArray = Array.from(tempClassList); // E change ho gaya Array collection me ab
+      console.log(myConvertedArray);
+
+      myConvertedArray.forEach((li) => {
+         li.style.backgroundColor = 'pink'
+      });
+
+    // myConvertedArray.forEach(function(li){
+    //     li.style.backgroundColor = '#19d619'
+    //     li.style.padding = '10px'
+
+    // })
+
+    // Notes: jab getElementsByClassName se access krte hai tab Ek se adhik item rahega toh HTML collection deta hai. for Each method use krne ko nhi milta hai ByclassName se acess krne par but usko convert kiya ja skte hai.  Array.form() ka use kr ke tab o converted item Array ban jaega phir usme ham forEach method ka use kr skate hai.  
+
+    </script>
+  </body>
+</html>

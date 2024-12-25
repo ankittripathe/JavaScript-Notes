@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pratice Set-1</title>
+</head>
+
+<body style="background-color: black;color: aliceblue;">
+
+  <h1 style="text-align: center;">Pratice Set-1</h1>
+  <!-- 
+        Ques.1 Your are creating a website for your college. Create a Class user with 2 properties, name & email. It also has a method called vieData() taht allow user to view website data. 
+    -->
+
+  <script>
+
+    class User {
+      constructor(name, email) {
+        this.name = name;
+        this.email = email;
+      }
+
+      viewData() {
+        console.log('secret information');
+      }
+    };
+
+    let student1 = new User('Ankit', 'ankit@gmail.com')
+    let student2 = new User('dhoni', 'dhoni@gmail.com')
+    let teacher = new User('dean', 'dean@gmail.com')
+
+    console.log(student1);
+    console.log(student1.viewData());
+
+    console.log(student2);
+
+    console.log(teacher);
+
+  </script>
+
+</body>
+
+</html>

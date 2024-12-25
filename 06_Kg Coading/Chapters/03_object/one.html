@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+</head>
+<body>
+    <script>
+        let userDetails = {
+         name: 'Ankit',
+         age: 24,
+         salary: 30000,
+        'company-Name': 'salesforce',
+        }
+        console.log(userDetails);
+        console.log(userDetails.name);
+        console.log(userDetails.age);
+        console.log(userDetails.salary);
+        console.log(userDetails['company-Name']);
+
+        //changing value 
+        userDetails.salary = 50000
+        console.log(userDetails.salary);
+        
+        // delete
+        delete userDetails.name
+        console.log(userDetails);
+
+        delete userDetails['age']
+        console.log(userDetails);
+    </script>
+    
+</body>
+</html>

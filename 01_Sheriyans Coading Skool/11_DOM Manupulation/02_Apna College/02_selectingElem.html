@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DOM(Method of selecting Elements)</title>
+    <style>
+      body {
+        background-color: palevioletred;
+      }
+    </style>
+  </head>
+  <body>
+    Hello Jee Kaise ho Sare ?
+    <div>JavaScripts!</div>
+    <h1 id="myId1">Document Object Model(DOM)</h1>
+    <h2 id="myId2">Happy Learning JavaScripts</h2>
+    <h5 class="hero random">Learn What Matters</h5>
+    <h5 class="hero random">Access by className</h5>
+    <h5 class="hero">Topic1:Starter code</h5>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <button>Click Me</button>
+
+    <!-- id => unique (#)   -->
+    <!-- class => one or more (.) -->
+    <script>
+      /**** Method of  Selecting Elements  ****/
+
+      /****  1.getElementById()  ****/
+      // console.log(document.getElementById('myId1'));     // direct print kiya hai
+
+      let heading1 = document.getElementById("myId1");    //h1
+      // console.log(heading1);
+      // console.dir(heading1);                      //property  & methods vi dekne ko milega dir se.
+
+      // Example.1
+      heading1.style.backgroundColor = "red";
+      heading1.style.borderRadius = "10px 0px 10px 0px";
+      heading1.style.textAlign = "center";
+      heading1.style.padding = "7px 0px";
+
+
+      // Example.2
+      // document.getElementById('myId2').innerHTML = 'Whats up'
+      // document.getElementById('myId2').style.backgroundColor = 'green'
+
+      let heading2 = document.getElementById("myId2");
+      heading2.style.backgroundColor = "yellow";
+      heading2.style.borderRadius = "0px 10px 0px 10px";
+      heading2.style.paddingLeft = "230px";
+
+    
+
+      /****  2.getElementsByClassName() *****/
+      let klass = document.getElementsByClassName("hero");
+      console.log(klass);
+
+      klass[0].style.backgroundColor = "tomato";
+      klass[0].style.padding = '2em'
+      klass[0].innerHTML = "Topic: getElementsByClassName() ";
+      klass[1].style.backgroundColor = "green";
+      klass[2].style.backgroundColor = "red";
+
+
+      /******  3.getElementsByTagName()  *****/
+      let para = document.getElementsByTagName("p");
+      // console.log(para);
+      // console.dir(para);
+
+      para[0].style.backgroundColor = "blue";
+      para[0].innerHTML = 'Three'
+      para[1].style.backgroundColor = "grey";
+      para[1].innerHTML = 'Two'
+      para[2].style.backgroundColor = "maroon";
+      para[2].innerHTML = 'one'
+
+      
+      /*****  4.byquerySelector()  *****/
+      let firstElm = document.querySelector("p");
+      // console.dir(firstElm);
+      console.log(firstElm);
+      firstElm.style.color = 'red'
+
+      /****   5.byquerySelectorAll() ****/
+      let allElm = document.querySelectorAll("p");
+      // console.dir(allElm);
+      console.log(allElm);
+      allElm[0].style.backgroundColor = "aqua";
+      allElm[1].style.backgroundColor = "orangered";
+
+      /****   6.byquerySelector('.myclass') => querySelector using class  ****/
+      //only first element select hoga
+
+      let firstElements = document.querySelector(".hero");
+      console.log(firstElements);
+
+      //****  7.byquerySelectorAll('.myclass') => querySelectorAll using class   ****/
+      //all elements are selected  (nodelist)
+
+      let allElements = document.querySelectorAll(".hero");
+      // console.dir(allElements);
+
+      /****  8.byquerySelector('#myid') => querySelector using Id    ****/
+
+      let firstElement = document.querySelector("#myId1");
+      // console.dir(firstElement);
+
+      /*  ByquerySelectorAll('#myId') => querySelectorAll using 
+           Id doesnot make any sense because Id are unique always & are not applied to all */
+
+
+
+    </script>
+  </body>
+</html>

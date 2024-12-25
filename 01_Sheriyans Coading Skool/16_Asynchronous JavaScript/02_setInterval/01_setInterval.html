@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval:- asynchronous JavaScript</title>
+  </head>
+  <body style="background-color: black; color: white; text-align: center">
+    <h3>
+      setInterval:- Is a JavaScript function that repeatedly executes a
+      specified callback function at a fixed time interval (in milliseconds).
+    </h3>
+    <h3>
+      The execution continues until it is explicitly stopped using
+      clearInterval.
+    </h3>
+
+    <h3>Syntax:- setInterval(callback, interval, ...args);</h3>
+
+    <h3>let intervalID = setInterval(callback, delay, [arg1, arg2, ...]);</h3>
+
+    <h2>
+      setinterval:- setinterval ka code kuch der baad chalta hai baar baar ek
+      particular interval time mein.
+    </h2>
+
+    <script>
+      // Example.1
+      function sayHello() {
+        console.log("Hello, world!");
+      }
+      const intervalID = setInterval(sayHello, 1000); // Executes sayHello every 1 second
+
+      // To stop setInterval
+      setTimeout(() => {
+        clearInterval(intervalID); // clearInterval
+      }, 2000);
+
+      // Example.2
+      let count = 0;
+
+      let humaraInterval = setInterval(() => {
+        count++;
+        console.log("Count:", count);
+
+        if (count === 5) {
+          clearInterval(humaraInterval); // Stop the interval from running further
+          console.log("Interval stopped!");
+        }
+      }, 1000);
+
+      // Example.3
+      function greet(name) {
+        console.log(`Hello, ${name}!`);
+      }
+      const answer = setInterval(greet, 2000, "Pushpa");
+
+      setTimeout(() => clearInterval(answer), 5000);   // stpped setInterval
+    </script>
+  </body>
+</html>

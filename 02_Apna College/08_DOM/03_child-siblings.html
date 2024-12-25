@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>DOM(firstChild | lastChild | Sibling)</title>
+  <style>
+    body {
+      background-color: rgba(0, 0, 0, 0.712);
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>DOM(firstChild || lastChild || Sibling)</h1>
+  <div>JavaScripts!</div>
+  <h1>Document Object Model(DOM)</h1>
+  <h2>Happy Learning JavaScripts</h2>
+  <h5>Learn What Matters</h5>
+  <p>Paragraph-1</p>
+  <button>Click Me</button>
+  <script>
+    // console.log(document.body.firstChild);         // output:- #text
+    // console.log(document.body.firstElementChild);  // output:- h1
+
+
+    // console.log(document.body.children);       // output:- html collection dega jitna tag present hoga
+    // console.log(document.body.children[0]);       // output:- h1
+    // console.log(document.body.children[6]);       // output:- button
+    // console.log(document.body.children[7]);       // output:- scripts
+
+
+    // console.log(document.body.childNodes);        // output:- nodelist (Esme gap ko text le lega)
+
+
+    // console.log(document.body.lastChild);         // output:- scripts
+    // console.log(document.body.lastElementChild);  // output:- scripts
+
+
+    // console.log(document.body.firstElementChild.nextElementSibling);     // output:- div
+    // console.log(document.body.firstElementChild.nextSibling);            // output:- #test
+
+
+    // console.log(document.body.firstChild.nextElementSibling);            // output:- h1
+    // console.log(document.body.firstChild.nextSibling);                   // output:- h1
+
+
+    // console.log(document.body.firstElementChild.previousElementSibling); // output:- null
+    // console.log(document.body.firstElementChild.previousSibling);        // output:- #text
+
+
+    // console.log(document.body.lastElementChild.previousElementSibling);  // output:- button
+    // console.log(document.body.lastElementChild.previousSibling);         // output:- #test
+
+
+    // console.log(document.body.lastElementChild.nextElementSibling);      // output:- null
+    // console.log(document.body.lastElementChild.nextSibling);             // output:- null
+  </script>
+
+  
+</body>
+</html>

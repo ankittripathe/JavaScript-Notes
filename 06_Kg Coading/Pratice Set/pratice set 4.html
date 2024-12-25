@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRATICE SET 4</title>
+</head>
+<body>
+    <script>
+        //01. create a method to check if a number is odd or even.
+        function isOdd(number){
+            let rem = number % 2;
+            let isOdd = rem == 1;
+            return isOdd
+        }
+        console.log(isOdd(22));
+        console.log(isOdd(19));
+        console.log(isOdd(21));
+        console.log(isOdd(7));
+
+        //02.Create a method to return larger of the two numbers.
+
+        function larger(num1, num2){
+            if(num1 > num2){
+              return num1
+            }else {
+                return num2
+            }
+        }
+        console.log(larger(10,55));
+        console.log(larger(10,5));
+       
+        //03. Create a method to convert Celsius to Fahrenheit 
+        //   F = (9/5) * C + 32
+
+        function toFahrenheit(CelsiusValue){
+           return 9/5 * CelsiusValue + 32
+        }     
+        console.log(toFahrenheit(37));
+
+    </script>
+</body>
+</html>

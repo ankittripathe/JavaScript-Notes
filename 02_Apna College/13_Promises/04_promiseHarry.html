@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises By Harry</title>
+  </head>
+
+  <body style="background-color: black; color: white">
+    <h1>Promises</h1>
+
+    <script>
+      // Example.1
+      let promise1 = new Promise((resolve, reject) => {
+        let num = Math.round(Math.random() * 10);
+        console.log(num);
+        if (num < 5) {
+          reject("random number was not supporting you");
+        } else {
+          setTimeout(() => {
+            console.log("Yes I am Done");
+            resolve("Ankit");
+          });
+        }
+      });
+
+      promise1
+        .then((data) => {
+          console.log(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      // console.log(promise1);
+
+      /***********  Example.2 (Promise channing) *************/
+      // let prom1 = new Promise((resolve, reject) => {
+      //   let num = Math.random();
+      //   if (num < 0.5) {
+      //     reject("random number was not supporting you");
+      //   } else {
+      //     setTimeout(() => {
+      //       console.log("Yes I am Done");
+      //       resolve("Ankit");
+      //     }, 2000);
+      //   }
+      // });
+
+      //   let prom2 = new Promise((resolve, reject) => {
+      //     let num = Math.random();
+      //     if (num < 0.5) {
+      //       reject("random number was not supporting you 2");
+      //     } else {
+      //       setTimeout(() => {
+      //         console.log("Yes I am Done 2");
+      //         resolve('Ankit 2');
+      //       }, 2000);
+      //     }
+      //   });
+
+      // let final  = Promise.all([prom1, prom2])     // Array me kr ke krne se array list me output dega.
+      // // let final = Promise.allSettled([prom1, prom2]); //Esse status mil jaega
+
+      //   final
+      //     .then((a) => {
+      //       console.log(a);
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+
+      // Example upar wala other method
+      // let p1 = new Promise((resolve, reject) => {
+      //   let num = Math.random();
+      //   // let num = 0.6;
+      //   if (num < 0.5) {
+      //     reject("random number was not supporting you");
+      //   } else {
+      //     setTimeout(() => {
+      //       console.log("Yes I am Done");
+      //       resolve("Ankit");
+      //     }, 2000);
+      //   }
+      // });
+
+      // p2 ke kuch return kr rhe hai
+      // let p2 = p1
+      //   .then((a) => {
+      //     console.log(a);
+      //     // net promise esi ke ander return ho rha hao p2 me
+      //     return new Promise((resolve, reject) => {
+      //       let num = 0.6;
+      //       if (num < 0.5) {
+      //         reject("random number was not supporting you 2");
+      //       } else {
+      //         setTimeout(() => {
+      //           console.log("Yes I am Done 2");
+      //           resolve("Ankit 2");
+      //         }, 2000);
+      //       }
+      //     });
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+
+      // //return wala print krwaenge yaha
+      // p2.then((data) => {
+      //   console.log(data);
+      // });
+
+      // Ek sath dono  ko krne ka tarika
+      // let final = Promise.all([p1, p2]);
+      // final
+      //   .then((a) => {
+      //     console.log(a);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+    </script>
+  </body>
+</html>

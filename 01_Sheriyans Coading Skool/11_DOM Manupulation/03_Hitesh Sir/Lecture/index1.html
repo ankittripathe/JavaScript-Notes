@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM (Part-1)</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-black">
+    <h1 id="title" class="heading" name="Ankit">
+      DOM Learning On Chai aur Code
+    </h1>
+    <h2 id="subTitle">setAttributes id here</h2>
+    <p>Lorem, ipsum dolor sit amet !</p>
+  </div>
+
+  <script>
+    // console.log(document.getElementById('title'));
+
+    // console.log(document.getElementById('title').id);
+
+    // console.log(document.querySelector('h1').getAttribute('id'));
+
+    // console.log(document.getElementById('title').className);
+
+    // console.log(document.getElementById('title').getAttribute('id'));
+    // console.log(document.getElementById('title').getAttribute('class'));
+    console.log(document.getElementById("title").getAttribute("name"));
+
+    console.log(document.getElementById("title").getAttributeNames());
+    // sara Attributes jitna hoga sab de deega
+
+    console.log(document.getElementById("title").setAttribute("class", "test"));
+    // purane wale class ko overWrite kr dega aur heading => ke jagah pe test aa jaega.
+    // Note: (SetAttribute always overWrite purane wale ko hata deta hai either class ho ya id).
+
+    console.log(document.getElementById('title').setAttribute('class', 'test classTest check'));
+    // class me more than one class set kr skte hai.
+
+    console.log(document.getElementById('subTitle').setAttribute('id', 'idTest'));
+    // setAttributes always overWrite old one.   
+
+    console.log(document.getElementById('title').setAttribute('player', 'Dhoni'));
+    // key hai agar toh overWrite krega aur nhi hai toh new Create ho jaega  key(palyer) = value(dhoni). See this changes in browser => inspect => Elelments
+
+  </script>
+</body>
+
+</html>

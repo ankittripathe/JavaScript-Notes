@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM (setAttribute)</title>
+  <style>
+    body {
+      background-color: grey;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="box" class="hero" name='Ankit'>
+    setAttributes(attr, value) => To set the attribute & value
+  </h1>
+  <p class="paragraph">
+    Agar phale se class exist krta hoga toh overWrite kr dega, agar nhi krta hoga toh new create kr dega
+  </p>
+  <h5>Best of Luck</h5>
+  <h6>Thank you</h6>
+
+  <script>
+    //*** setAttributes(attr, value) => To set the attribute & value  ***//
+
+    // Selecting the Tag p
+    // Example.1
+    const para = document.querySelector('p')
+    console.log('para =', para);
+    
+
+    console.log(para.setAttribute('class', 'p1'));
+    // console.log(para.setAttribute('class', 'p1 p2'));  // can set mutiple class 
+    // Agar phale se class exist krta hoga toh overWrite kr dega, agar nhi krta hoga toh new create kr dega
+
+    console.log(para.setAttribute('name', 'Ektu'));  // create new attribute & set value as well
+    console.log(para.setAttribute('id', 'demo'));    // create new attribute & set value
+
+    // Exmaple.2
+    const heading = document.querySelector('h5')
+    
+    console.log(heading.setAttribute('id', 'unknown'));  // without declearing variable
+
+    const result = heading.setAttribute('class', 'last-heading')
+    console.log(result);
+
+    console.log('heading =', heading);
+
+    // Example.3
+    const lastHeading = document.querySelector('h6')
+    console.log(lastHeading);
+
+    console.log(lastHeading.setAttribute('class', 'heading6 random lastOne'));
+    console.log(lastHeading.setAttribute('id', 'greet'));
+    
+    console.log(lastHeading);
+    
+    
+    
+    
+  </script>
+</body>
+
+</html>

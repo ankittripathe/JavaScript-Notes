@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratice set-5</title>
+</head>
+<body style="background-color: black;color:white;">
+    Hello Jee
+    <script>
+        /*
+        Ques.1 Prompt the user to enter their full name. Generete a username for them based on the input.
+        start username with @, followed by their fullname and ending with fulname length.
+    
+        E.g userName = "Ankittripathi" , userName should be "@ankittripathi13"
+        */
+
+        let fullName = prompt('Enter your fullname without spaces');
+        // let userName = "@".concat(fullName) + fullName.length
+        let userName = "@" + fullName + fullName.length
+        console.log(userName);  
+    </script>
+</body>
+</html>

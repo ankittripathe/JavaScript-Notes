@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promisees(chai aur code)</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <h1>Promises In JS(chai aur code)</h1>
+
+    <script>
+      /******* Example.1  ********/
+      const promiseOne = new Promise((resolve, reject) => {
+        setTimeout(function () {
+          console.log("async task-1");
+        }, 1000);
+      });
+      console.log(promiseOne);
+
+      promiseOne.then(() => {
+        console.log("promise is fullfilled");
+      });
+
+      /* Notes:-
+          .then() wala part yaha print hi nhi hoga => eska direct connection hai resolve() se agar resolve ko call nhi krenge toh .then() wala part kavi vi execute nhi hoga
+      */
+
+      /********* Example.2  ***********/
+      const promiseTwo = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("async task-1 is completed");
+          resolve(); // reslove ka conection hai .then() ke sath
+        }, 1000);
+      });
+
+      // /*reslove ka conection hai .then() ke sath upar agar resolve ko call krenge tab
+      // .then() wala part execute hoga */
+
+      promiseTwo.then(() => {
+        console.log("async-1 resolved");
+      });
+      // console.log(promiseTwo);
+
+      // Example.3
+      // const promise3 = new Promise((reslove, reject) => {
+      //   let isBoarded = false;
+      //   if (isBoarded) {
+      //     reslove("You are in the flight");
+      //   } else {
+      //     reject("ticket not confirmed");
+      //   }
+      // });
+
+      // promise3
+      //   .then((data) => {
+      //     console.log(data);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+
+      // console.log(promise3);
+
+      /********** Example.3 **********/
+      // Notes: Bina variable declear kiye upar wala question
+
+      // new Promise(function (resolve, reject) {
+      //   setTimeout(() => {
+      //     console.log("Asyn task 2 is completed");
+      //     resolve('sucess');
+      //   }, 1000);
+      // })
+
+      // .then(function () {
+      //   console.log("Asyn 2 resolved");
+      // });
+
+      /******** Example.4  **********/
+      // const promiseFour = new Promise((resolve, reject) => {
+      //   setTimeout(()=> {
+      //     //resolve ke ander data vi pass kr skte hai => string, Array, function kuch vii
+      //     //resolve('Ankit')
+      //     resolve({ userName: "ankit", email: "ankit@gmail.com" });
+      //   }, 1000);
+      // });
+      // console.log(promiseFour);
+
+      // promiseFour.then((data)=> {
+      //   console.log(data);
+      // });
+
+      /* resolve() ke ander wala data print krne ke liye =>argument me data pass kr denge (function (data)) agrument = data , user , abc kuch vi */
+
+      /********** Example.5 ************/
+      // const promiseFive = new Promise(function (reslove, reject) {
+      //   setTimeout(function () {
+      //     let error = true;
+      //     if (!false) {
+      //       reslove({ userName: "Avinash", password: "123@avi" });
+      //     } else {
+      //       reject("Error: Something went wrong");
+      //     }
+      //   }, 1000);
+      // });
+
+      // promiseFive
+      //   .then((data)=> {
+      //     console.log(data);
+      //     return data.userName;
+      //   })
+      //   .then((userName)=> {
+      //     console.log(userName);
+      //   })                        // .then() ke ander ek aur .then() wale ko bolte hai chaining
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   });
+
+      // Notes: Condition true huwa toh .then() wala part execute hoga aur agar false huwa toh .catch() wala.
+
+      
+
+      /************ Example.6  *******************/
+      // const promiseSix = new Promise((reslove, reject)=> {
+      //   setTimeout(()=> {
+      //     if (true) {
+      //       reslove({ userName: "JavaScripts", password: "12345" });
+      //     } else {
+      //       reject("Error: Something went wrong");
+      //     }
+      //   }, 1000);
+      // });
+
+      // promiseSix
+      //   .then((user)=> {
+      //     console.log(user);
+      //     return user.password;
+      //   })
+      //   .then((password)=> {
+      //     console.log(password);
+      //   })
+      //   .catch(function (error) {
+      //     console.log(error);
+      //   })
+      //  .finally(()=>{
+      //     console.log('I will execute always');
+      //  })
+
+
+
+      /************** Example.7 ***************/
+      // let yourOrder = new Promise((reslove, reject) => {
+      //   let orderIsBooked = true;
+      //   if (false) {
+      //     reslove("Your Order is Suceddfully Placed");
+      //   } else {
+      //     reject("Your order is Cancelled");
+      //   }
+      // });
+
+      // yourOrder
+      //   .then((data) => {
+      //     console.log('Congratulation',data);
+      //   })
+      //   .catch((data)=>{
+      //     console.log('Sorry',data);
+      //   })
+      //   .finally(()=>{
+      //     console.log('I will always Execute');
+      //   })
+
+
+
+      /********** Example.8 ***********/
+      // let myOrder = new Promise((reslove, reject) => {
+      //   let orderIsBooked = true;
+      //   if (true) {
+      //     reslove({userName:'Ankit'});
+      //   } else {
+      //     reject("Your order is Cancelled");
+      //   }
+      // });
+
+      // myOrder
+      //   .then((data) => {
+      //     // console.log(data);
+      //     return data.userName
+      //   })
+      //   .then((userName)=>{
+      //     console.log(userName,'Your Order is Sucessfully placed');
+      //   })
+      //   .catch((error)=>{
+      //     console.log('Sorry',error);
+      //   })
+      //   .finally(()=>{
+      //     console.log('I will Execute always either promise is resolve or reject');
+      //   })
+
+
+
+      /******* Example.9 ***********/
+      // const tickets = new Promise((resolve, reject) => {
+      //   const isBoarded = false;
+      //   if (isBoarded) {
+      //     resolve("You are in the Flight");
+      //   } else {
+      //     reject("Your flight has been cancelled");
+      //   }
+      // });
+
+      // tickets
+      //   .then((data) => {
+      //     // resolve ke liye E wala code execute hoga.
+      //     console.log("Congratulation", data);
+      //   })
+      //   .catch((error) => {
+      //     // reject ke liye E wala code execute hoga.
+      //     console.log("Sorry", error);
+      //   })
+      //   .finally(() => {
+      //     // reject hoga ya resolve E wala code execute hoga hi.
+      //     console.log("I will always Executed ");
+      //   });
+    </script>
+  </body>
+</html>

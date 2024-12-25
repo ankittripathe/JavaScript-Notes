@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>object (OOPS)</title>
+</head>
+
+<body>
+  <h1 style="text-align: center;">OOPS Concept</h1>
+
+  <p>this keyword:- This refers to the same object that owns the method</p>
+
+  <p>
+    When using arrow functions in object methods: arrow functions do not have their own this value; they inherit this
+  </p>
+
+  <p>
+    Notes:- To make sure the method works correctly and this refers to the object, you should use a regular function rather than an arrow function:
+  </p>
+
+  <script>
+    // Example.1
+    const student = {
+      name: 'Ankit',
+      marks: 91,
+      fabourite: ['cricket', 'dhoni'],
+      printMarks: function () {
+        return `marks = ${this.marks}` // this.marks => refer to same obejct (student.marks)
+      },
+    };
+    console.log(student);               // output:- {name: 'Ankit', marks: 95, printMarks: ƒ}
+    console.log(typeof student);        // output:- object
+
+    console.log(student.name);          // output:- Ankit
+    console.log(student.marks);         // output:- 91
+    console.log(student.fabourite);     // output:- ['cricket', 'dhoni']
+
+    console.log(student.printMarks());  // output:- marks = 91 (this is method)
+
+
+    // Examle.2
+    const employee = {
+      calcTax1() {    // simple way hai object ke ander apne function ko define krne ka              
+        console.log('simple way to define function inside object');
+      },
+
+      calcTax2: function () {
+        console.log('this is another way to define function inside object');
+      }
+    };
+    employee.calcTax1();   // output:- simple way to define function inside object'
+    employee.calcTax2();   // output:- another way to define function inside object
+
+
+    // Example.3 
+    const car = {
+      make: 'Toyota',
+      model: 'Corolla',
+      year: 2020,
+      displayInfo:()=>{
+        return `${this.year} ${this.make} ${this.model}`;  // `this` will not refer to the `car` object (because arrow function don't have their own .this)
+      }
+    };
+    console.log(car.displayInfo());  // output: "undefined undefined undefined"
+
+    // Notes:- arrow functions don't have their own this, the output will be undefined because this is not referring to the car object.
+
+    // Example.4
+    const cars = {
+      make: 'Toyota',
+      model: 'Corolla',
+      year: 2020,
+      displayInfo: function () {
+        return `${this.year} ${this.make} ${this.model}`;  // `this` refers to the `car` object
+      }
+    };
+    console.log(cars.displayInfo());  // Output: "2020 Toyota Corolla"
+
+    // Notes:- To make sure the method works correctly and this refers to the object, you should use a regular function rather than an arrow function:
+  </script>
+</body>
+
+</html>

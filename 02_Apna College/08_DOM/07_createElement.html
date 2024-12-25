@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM (create | append | prepend | before | after)</title>
+  <style>
+    body {
+      background-color: gray;
+      color: white;
+    }
+
+    div {
+      height: 50vh;
+      width: 40vw;
+      background-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <h1>DOM (create | append | prepend | before | after)</h1> -->
+  <div>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+  </div>
+
+  <script>
+    /*
+    Steps.1 CreateElement
+    Steps.2 finally screen pe show krne ke liye append / prepend / before / after (any) 
+
+    node.append(elements)  => adds at the end of node(inside)
+    node.prepend(elements) => adds at the start of node(inside)
+    node.before(elements)  => adds before the node(outside)
+    node.after(elements)  => adds after the node(outside)
+    */
+
+    // Example.1
+    //  Step.1 Create Element
+    const newBtn = document.createElement("button");
+    newBtn.innerText = "click me!";
+    console.log(newBtn);   // output:- click me!
+
+    // Step.2 Finally Show on Screen
+    // const divs = document.querySelector("div");
+    // divs.append(newBtn)         // badd me 
+    // divs.prepend(newBtn)     // pahle
+    // divs.before(newBtn)      // selected elements se pahle
+    // divs.after(newBtn);      // selected elements le Badd
+
+
+    // Example.2
+    // Step-1 Created Element
+    const  createdPara = document.createElement('p')
+    createdPara.innerHTML = '<i>This is created Elements</i>'
+    console.log(createdPara);  // output:- This is created Elements
+
+    // Step-2 body wale part me dikhane ke liye body ka use krenge
+    // document.body.append(createdPara)    // direct method
+    // document.body.prepend(createdPara)  
+    // document.body.after(createdPara)    // body tag ke khtam hone ke badd
+    // document.body.before(createdPara)   // body tag ke upar 
+
+
+    const bodyPeShow = document.body
+    // bodyPeShow.append(createdPara)          // badd me last me
+    // bodyPeShow.prepend(createdPara)         // pahle ya top pe
+
+
+    // Example.3
+    const heading = document.createElement('h1')
+    heading.innerHTML = 'DOM (create | append | prepend | before | after)'
+    document.body.prepend(heading)
+
+
+
+    /* Notes:
+      Element.append()
+      (1) Element.append() allows you to also append string objects.
+      (2) Element.append() has no return value.
+      (3) Element.append() can append several nodes and strings.
+      (4) To sum it up, append() is used to add HTML content or an element to the end of an existing element 
+
+      Node.appendChild()
+      (1) Node.appendChild() only accepts Node objects.
+      (2) Node.appendChild() returns the appended Node object.
+      (3) Node.appendChild() can only append one node.
+      (4) To sum it up, appendChild() is used to add a new node element as a child to an existing node.
+    */
+  </script>
+</body>
+</html>

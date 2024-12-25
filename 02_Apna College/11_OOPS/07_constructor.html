@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor In JS(part-2)</title>
+  </head>
+  <body style="background-color: black; color: wheat;">
+    <h1>
+      constructor(){} method is
+      <h2>=> automatically invoked by new</h2>
+      <h2>=> initializes objects</h2>
+    </h1>
+
+    <script>
+      class ToyotaCar {
+        constructor(brand, milage) {
+          console.log("creating new object");
+          this.brandName = brand;
+          this.milageMilega = milage
+        }
+
+        start() {
+          console.log("start");
+        }
+      };
+
+      let fortuner = new ToyotaCar('fortunerCar', 10);  // constructor invoke
+      console.log(fortuner);
+
+      let safari = new ToyotaCar('safariCar', 15);  // constructor invoke
+      console.log(safari); 
+                  
+    </script>
+  </body>
+</html>

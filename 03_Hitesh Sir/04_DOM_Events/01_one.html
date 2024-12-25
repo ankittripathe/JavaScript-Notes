@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Events</title>
+  </head>
+
+  <body style="background-color: #414141; color: aliceblue">
+    <!-- Inline event handler -->
+    <h2 onclick="alert('inline event handler')">Amazing Image</h2>
+    <h3>ImageList Are:</h3>
+
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="god"
+            src="https://images.pexels.com/photos/13041184/pexels-photo-13041184.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <img
+            width="200px"
+            id="phone"
+            src="https://images.pexels.com/photos/583842/pexels-photo-583842.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <img
+            width="200px"
+            id="coading"
+            src="https://images.pexels.com/photos/6963944/pexels-photo-6963944.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <img
+            width="200px"
+            id="car"
+            src="https://images.pexels.com/photos/831475/pexels-photo-831475.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <img
+            width="200px"
+            id="owl"
+            src="https://images.pexels.com/photos/3732453/pexels-photo-3732453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+            alt="photoshop"
+          />
+        </li>
+
+        <li>
+          <a style="color: aliceblue" href="https://google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+
+  <script>
+    // (1) By declaring variable //
+    // const owl = document.getElementById('owl')
+    // owl.onclick = () => {
+    //   alert('owl clicked')
+    // }
+
+    // (2) By arrow function //
+    // document.getElementById('owl').onclick = ()=>{
+    //   alert('owl clicked')
+    // }
+
+    // (3) By Normal function //
+    // document.getElementById('owl').onclick = function(){
+    //   alert('owl clicked')
+    // }
+
+    //(1) Event listner best approach //
+    //  document.getElementById('owl').addEventListener('click', function(){
+    //   alert('owl clicked again')
+    //  },false)   // By default false hota hai jarurat ke time true kr skte hai
+
+    /*
+  //attachEvent()
+  //jQuery - on
+
+    type, timestamp, defaultPrevented,
+    target, toElement, scrElement, currentTarget,
+    clintX , clintY , screenX , screenY
+    altkey ,ctrlKey , shift,keyCode
+*/
+
+    //  document.getElementById('owl').addEventListener('click', function(){
+    //   alert('ullu clicked ')
+    //  })
+
+    //  document.getElementById('owl').addEventListener('click',()=>{
+    //   alert('ullu clicked')
+    //  })
+
+    //  const store  = document.getElementById('owl')
+    //  store.addEventListener('click', ()=>{
+    //   alert('ullu clikced')
+    //  })
+
+    // (2) bubbling mode (buttom to top) //
+    // document.getElementById('images').addEventListener("click", function (eventobject) {
+    //   console.log('clicked indside the ul');
+    // }, false);
+
+    // document.getElementById('owl').addEventListener("click", function (eventobject) {
+    //   console.log('owl clicked');
+    // }, false);
+
+    // (3) capturing mode (top to buttom) //
+
+    // document.getElementById('images').addEventListener('click', function (eventobject) {
+    //   console.log('clicked indside the ul');
+    // }, true)
+
+    // document.getElementById('owl').addEventListener("click", function (eventobject) {
+    //   console.log('owl clicked');
+    // }, true);
+
+    // (4) Stop propagation (bubble hoke upar wale Elements pe nhi jaega like body) //
+
+    // document.getElementById('images').addEventListener("click", function (ev) {
+    //   console.log('clicked indside the ul');
+    // }, false);
+
+    // document.getElementById('owl').addEventListener("click", function (ev) {
+    //   console.log('owl clicked');
+    //   ev.stopPropagation()
+    // }, false);
+
+    // (5) preventDefault()  //
+    document.getElementById("google").addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log("google clicked");
+    });
+
+    // (6) remove()  //
+    // document.querySelector('#images').addEventListener('click', function (ev) {
+    //   console.log(ev.target);
+    //   console.log(ev.target.parentNode);
+    //   console.log(ev.target.tagName);
+
+    //   let removeIt = ev.target.parentNode
+    //   removeIt.remove()
+    // }, false)
+
+    document.querySelector("#images").addEventListener("click", function (e) {
+      console.log(e.target.tagName);
+      if (e.target.tagName === "IMG") {
+        let removeIt = e.target.parentNode;
+        removeIt.remove();
+        // removeIt.parentNode.removeChild(removeIt)
+      }
+    });
+
+    const heading = document.querySelector("h3");
+    heading.addEventListener("mouseover", () => {
+      heading.style.color = "red";
+    });
+
+    heading.addEventListener("mouseleave", () => {
+      heading.style.color = "white";
+    });
+  </script>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch API</title>
+  </head>
+  <body style="background-color: black; color: white">
+    <!-- For Example.1 -->
+    <p id="fact"></p>
+    <button id="btn1">Get a Facts</button>
+
+    <!-- For Example.2 -->
+    <h1 id="heading1"></h1>
+    <button id="btn2"></button>
+
+    <script>
+      /****  Example.1  ****/
+      //This is free Api
+      // const URL = "https://cat-fact.herokuapp.com/facts";
+
+      // accessing p
+      const factpara = document.querySelector("#fact");
+      //accessing button
+      const btnOne = document.querySelector("#btn1");
+
+      const getFacts = async () => {
+        console.log("getting data....");
+        let response = await fetch(URL);
+        console.log(response); //JSON format
+        let data = await response.json();
+        console.log(data);
+        factpara.innerText = data[0].text;
+        // factpara.innerText = data[4].text;
+      };
+      // getFacts();
+
+      // here function call using Event listner.
+      btnOne.addEventListener("click", getFacts);
+
+      /****** Example.2 ************/
+      const heading = document.querySelector("#heading1");
+      const btnTwo = document.querySelector("#btn2");
+      btnTwo.innerHTML = "Get Data (by double clicking)";
+
+      async function getData() {
+        console.log("fetching data......");
+        let response = await fetch(`https://randomuser.me/api/`);
+        console.log(response);
+        let result = await response.json();
+        console.log(result);
+      }
+      btnTwo.addEventListener("dblclick", getData);
+    </script>
+  </body>
+</html>

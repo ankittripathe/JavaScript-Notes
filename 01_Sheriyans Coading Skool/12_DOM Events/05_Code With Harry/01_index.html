@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Events</title>
+  </head>
+  <body>
+    <div
+      class="container"
+      onmouseenter="console.log('container ke ander mouse gaya')"
+      onclick="console.log('Container me Click huwa')"
+    >
+      <button
+        onclick="alert('Namasate!')
+       let a = 6;
+       console.log(a)"
+      >
+        Click me!
+      </button>
+    </div>
+
+    <script>
+      let cont = document.getElementsByClassName("container")[0];
+      cont.onclick = () => {
+        let b = document.getElementsByClassName("container")[0];
+        b.innerHTML = "Hello World !";
+      };
+    </script>
+  </body>
+</html>

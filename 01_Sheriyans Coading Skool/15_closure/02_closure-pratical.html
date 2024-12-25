@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>closure</title>
+    <style>
+      body {
+        background-color: black;
+        color: aliceblue;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>closure</h1>
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+
+    <script>
+      let orangeBtn = document.getElementById("orange");
+      let greenBtn = document.getElementById("green");
+      let bgColor = document.body;
+
+      // Pratical
+      function clickHandler(color) {
+        return function () {
+          bgColor.style.backgroundColor = `${color}`;
+        };
+      }
+      orangeBtn.onclick = clickHandler("orange");
+      greenBtn.onclick = clickHandler("green");
+
+      // brakedown here closure ka use huwa hai
+      const answer = clickHandler("orange");
+      console.log(answer);
+      answer();
+    </script>
+  </body>
+</html>

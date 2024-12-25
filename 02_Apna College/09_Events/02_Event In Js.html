@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM (Events in Js)</title>
+  <style>
+    button {
+      display: inline-block;
+      margin-inline: 20vw;
+      background-color: seagreen;
+      border-radius: 8px;
+      height: 6vh;
+      width: 8vw;
+      border: none;
+      margin-top: 5vh;
+    }
+
+
+    .container {
+      display: flex;
+      justify-content: space-evenly;
+      height: 15vh;
+      width: 100vw;
+      margin: 15px;
+      margin-top: 80px;
+    }
+
+    .box {
+      color: white;
+      border: 1px solid black;
+      width: 10vw;
+      text-align: center;
+      margin: 5px;
+      align-content: center;
+      border-radius: 6px;
+    }
+
+    #box1 {
+      background-color: lightcoral;
+    }
+
+    #box2 {
+      background-color: lightgreen;
+
+    }
+
+    #box3 {
+      background-color: orangered;
+    }
+
+    #box4 {
+      background-color: skyblue;
+
+    }
+
+    #box5 {
+      background-color: burlywood;
+    }
+
+    #box6{
+      background-color: red;
+    }
+
+    p {
+      height: 100px;
+      width: 100px;
+      background-color: rgb(212, 123, 7);
+      text-align: center;
+      margin: auto;
+      margin-top: 10vh;
+      align-content: center;
+    }
+
+    h5 {
+      background-color: salmon;
+      padding: 18px;
+      text-align: center;
+      display: inline-block;
+      border-radius: 5px;
+      margin-left: 46vw;
+      margin-top: 10vh;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="btn1">button-1</button>
+  <button id="btn2">button-2</button>
+  <div class="container">
+    <div id="box1" class="box">box-1</div>
+    <div id="box2" class="box">box-2</div>
+    <div id="box3" class="box">box-3</div>
+    <div id="box4" class="box">box-4</div>
+    <div id="box5" class="box">box-5</div>
+    <div id="box6" class="box">box-6</div>
+  </div>
+  <p>This is paragraph</p>
+  <h5>Thank you</h5>
+
+  <script>
+    // (1) selecting button
+    // btn1
+    const btn1 = document.getElementById("btn1");
+    btn1.onclick = () => {
+      console.log("handler-1 clicked on btn-1");
+    };
+
+    // will overWrite 2nd One if we apply twice on same element Events
+    btn1.onclick = () => {
+      console.log("handler-2 clicked on btn-1");
+    };
+
+    // btn-2  => [with event obejct (evt) => {}]
+    const btn2 = document.querySelector('#btn2')
+    btn2.onclick = (evt) => {
+      console.log(evt);
+      console.log(evt.type);
+      console.log(evt.target);
+      console.log(evt.clientX);
+      console.log(evt.clientY);
+    }
+
+
+    // (2) selecting div
+    // box-1
+    const box1 = document.querySelector("#box1");
+    box1.onmouseover = function () {
+      console.log("You are inside div");
+    };
+
+    // box-2
+    const box2 = document.querySelector("#box2");
+    box2.onmousemove = () => {
+      console.log('mouse is moving');
+    }
+
+    // box-3
+    const box3 = document.querySelector('#box3');
+    box3.onmousedown = (evt) => {
+      console.log(evt);
+      console.log(evt.type);
+      console.log(evt.target);
+      console.log(evt.clientX);
+      console.log(evt.clientY);
+    }
+
+    const box4 = document.getElementById('box4')
+    box4.onmouseleave = (event) =>{
+      console.log(event.type);
+    }
+
+    const box5 = document.getElementById('box5')
+    box5.onmouseout = (event) =>{
+      console.log(event.type);
+    }
+
+    const box6 = document.getElementById('box6')
+    box6.onmouseenter = (event) =>{
+      console.log(event.type);
+    }
+
+
+    // (3) selecting element p
+    // with Event object = (evt) => {}
+    const para = document.querySelector("p");
+    para.onclick = (evt) => {
+      console.log(evt);
+      console.log(evt.type);
+      console.log(evt.target);
+      console.log(evt.clientX, evt.clientY);
+    };
+
+    // (4) selecting Tag h5
+    const h = document.querySelector("h5");
+    h.onmouseup = (evt) => {
+      console.log(evt.type);
+      console.log(evt.target);
+    };
+
+   
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local-Storage</title>
+  </head>
+  <body>
+    <h2>
+      localStorage:- A web storage API that allows developers to store key-value
+      pairs in a user's browser with no expiration time.
+    </h2>
+    <h2>
+      It is part of the Web Storage API and provides a simple way to persist
+      data even after the browser is closed and reopened.
+    </h2>
+
+    <h3>Work in browser only</h3>
+
+    <script>
+      // JavaScripts LocalStorage  //
+      // (1) localStorage.setItem() => Used to store data in the local storage.
+      localStorage.setItem("name", "Ektu");
+
+      // (2) localStorage.getItem("name") => used to retrieve data from the local storage.
+      let storedName = localStorage.getItem("name");
+      console.log(storedName); // output: 'love'
+
+      // (3) localStorage.removeItem('name') => used to remove a specific item from local storage.
+      localStorage.removeItem("name");
+
+      let removedName = localStorage.getItem("name");
+      console.log("remoed ho gaya =", removedName); // output: null
+
+      // (4) localStorage.clear() => removes all items from local storage.
+      // localStorage.clear();
+
+      console.log(localStorage.getItem("name")); // Output: null (since all storage is cleared)
+
+      // Example.2
+      // (1) Store data
+      localStorage.setItem("userName", "JohnDoe");
+      localStorage.setItem("age", "30");
+
+      // (2) Retrieve data
+      let ans = localStorage.getItem("age");
+      console.log(ans);    // output: 30
+
+      // (3)Remove data
+      localStorage.removeItem('userName')
+
+      // (4) clear all data
+      localStorage.clear()
+
+      // Notes: Browser me jake localstore print krenge tab pata chalega ki kya remove huwa kya nhi.
+
+      // (3)
+    </script>
+  </body>
+</html>

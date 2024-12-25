@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM(Create Elements)</title>
+</head>
+
+<body style="background-color: black; color: white">
+
+
+</body>
+
+<script>
+  /* Element created */
+  let createdDiv = document.createElement("div"); //Element created
+  console.log(createdDiv);
+
+  createdDiv.innerHTML = "Happy MahaShivratri";
+  createdDiv.style.backgroundColor = "salmon";
+  createdDiv.style.padding = "15px";
+
+
+
+
+  createdDiv.className = "main doit"; //class Added =>  (class ka value Ek se adhik ho skta hai)
+  // createdDiv.id = 'check'                             //id Added
+  // createdDiv.id = Math.random() * 10 + 1;             //random id Added
+  createdDiv.id = Math.round(Math.random() * 10 + 1);    //Rounding the random value
+
+
+  /* Create Attributes */
+  createdDiv.setAttribute("title", "generated-title"); // Attribute(title) created and value given(generated-title)
+
+
+
+  document.body.appendChild(createdDiv);
+  /*Note: finally show krne ke liye appendChild() krna hota hai tab
+        show hoga  Display par jo hmne create kr ke uske ander likha hai
+  */
+
+  // Another Method of adding text (best upar wala hi hai )
+  const addText = document.createTextNode("Jai Shree Ram");
+  console.log(addText);
+  document.body.appendChild(addText);
+
+
+
+  /*Notes:
+  (1). appendChild
+  Syntax: parentElement.appendChild(childElement)
+  Usage: Adds a node to the end of the list of children of a specified parent node.
+  Type: Only accepts a single node or a NodeList of nodes.
+  Example:
+  document.body.appendChild(hold);
+  This line adds the hold element as the last child of the body element.
+
+  (2). append
+  Syntax: parentElement.append(...nodesOrStrings)
+  Usage: Can add multiple nodes or text strings to the end of the list of children of a specified parent  node.
+  Type: Accepts nodes, strings, or both.
+  Example:
+  document.body.append(hold);
+  This line also adds the hold element to the end of the body element, similar to appendChild
+*/
+</script>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pratice Set-1</title>
+  </head>
+  <body>
+    <!-- Ques1: Create a h2 heading element with text - "Hello javaScripts". 
+     Append  "from Apna College" to this using Js -->
+    <h2>Hello javaScripts</h2>
+
+    <!-- Ques2: Create 3 divs with common Class name - "box".
+         Access them 7 add some unique text to each of them -->
+
+         <div class="box">First div</div>
+         <div class="box">Second div</div>
+         <div class="box">Third div</div>
+
+    <script>
+      /**** Answer 1  ****/
+      let heading = document.querySelector("h2");
+      console.log(heading);
+      heading.innerText = heading.innerText + " from Apna college"; //concatinate
+
+      /**** Answer 2 ****/
+      let divs = document.querySelectorAll('div')
+      console.log(divs);
+
+      // let idx = 1
+      // for(div of divs){
+      //   div.innerText = `new Value ${idx}`
+      //   idx++;
+      // }
+      
+
+      divs[0].innerText = 'Ms Dhoni'
+      divs[0].style.backgroundColor = 'yellow'
+      divs[0].style.padding = '50px'
+
+      divs[1].innerText = 'S Raina'
+      divs[1].style.backgroundColor = 'orangered'
+      divs[1].style.padding = '40px'
+
+      divs[2].innerText = 'R jadega'
+      divs[2].style.backgroundColor = 'green'
+      divs[2].style.padding = '30px'
+
+
+
+    </script>
+  </body>
+</html>

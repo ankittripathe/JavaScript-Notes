@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratice-set7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px;
+        }
+
+        nav li {
+            list-style: none;
+            padding: 0px 25px;
+        }
+
+        ul {
+            margin-left: 36px;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Q1 Create a navbar and change the color to its first element to red -->
+    <nav>
+        <li>Home</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>Add to Bag</li>
+        <li>Sign In</li>
+    </nav>
+
+
+    <!-- (2) Create an elements with 3 children. Now change the color of first and last elements to yellow -->
+    <ul class="parent">
+        <li class="child">first child</li>
+        <li class="child">middle child</li>
+        <li class="child">last child</li>
+    </ul>
+
+    <!-- (3) Write a javaScripts code to change background of all <li> tags to cyan -->
+
+
+</body>
+
+<script>
+    // (1) Create a navbar & change the color to its first element to red
+    // document.getElementsByTagName("nav")[0].firstElementChild.style.color ="red"
+    let changeColor = document.getElementsByTagName("nav");
+    changeColor[0].firstElementChild.style.color = "red";
+
+
+    // (2) Create an elements with 3 children. Now change the color of first and last elements to yellow
+    var p = document.querySelector('.parent');
+
+    var children = p.querySelectorAll('.child');
+    children[0].style.backgroundColor = 'yellow'; // first child
+    children[2].style.backgroundColor = 'yellow'; // last child
+
+
+    // (3) Write a javaScripts code to change background of all <li> tags to cyan
+    Array.from(document.getElementsByTagName("li")).forEach((element) => {
+        element.style.background = "cyan"
+    });
+
+
+    // (4) Which of the following is used to look for the fartest ancestor that matches a  given CSS selector  (a) matches   (b) closest    (c) contains   (d) none of above 
+    // answer: (d) none of above
+</script>
+
+
+</html>

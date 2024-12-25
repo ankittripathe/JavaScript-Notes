@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch API:- Example</title>
+    <style>
+      body{
+        height: 100vh;
+        background-color: lightgreen;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      button{
+        height: 40px;
+        width: 140px;
+        margin-top: 50px;
+      }
+
+      img{
+        height: 400px;
+        width: 400px;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="" alt="Random_Image" id="image">
+    <button id="btnOne">Click here!</button>
+
+    <script>
+      const btn = document.getElementById("btnOne");
+      const randomImage = document.getElementById("image");
+
+    const url = "https://api.thecatapi.com/v1/images/search"
+      const getImages = async () => {
+        console.log("getting data....");
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+        console.log(data[0].url);
+        randomImage.src = data[0].url
+      }; 
+      btn.addEventListener("click", getImages);
+    </script>
+  </body>
+</html>

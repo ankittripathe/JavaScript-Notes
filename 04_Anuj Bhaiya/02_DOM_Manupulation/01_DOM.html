@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Manipulation</title>
+  <style>
+    .container {
+      background-color: teal;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 450px;
+      padding: 10px;
+      row-gap: 10px;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      display: flex;
+      flex-shrink: 0;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="box-1" class="box all">box-A</div>
+    <div id="box-2" class="box all random">box-B</div>
+    <div id="box-3" class="box all random">box-C</div>
+    <div id="box-4" class="box all">box-D</div>
+  </div>
+
+  <p>This is para 1</p>
+  <p>This is para 2</p>
+  <h4>Home</h4>
+  <h4>About</h4>
+  <h4>Contact Us</h4>
+  <h5>Best Of Luck</h5>
+  <button>click me!</button>
+
+  <script>
+    const mybody = document.body;
+    mybody.style.backgroundColor = `skyblue`
+    console.log(mybody);
+
+    // Method of selecting HTML Elements
+    // (1) documnet.getElementById("xyz")
+    const boxTwo = document.getElementById('box-2')
+    console.log(boxTwo);
+
+    // (2) document.getElementsByTagName("p/ div/ h1/ a") => Html collection dega elements likha hai
+    const divs = document.getElementsByTagName('div')
+    console.log(divs);
+
+    const para = document.getElementsByTagName('p')
+    console.log(para);
+
+    const heading = document.getElementsByTagName('h5')
+    console.log(heading);
+
+    // (3) document.getElementsByClassName('box') => html collection
+    const boxes = document.getElementsByClassName('box')
+    console.log(boxes);
+
+    const boxx = document.getElementsByClassName('random')
+    console.log(boxx);
+
+    // (4) document.querySelector()
+    const random = document.querySelector('.random')  //pahla wala bas chooose krta hai  
+    console.log(random);
+
+    var allcheck = document.querySelector('.all')  //pahla wala bas chooose krta hai  
+    console.log(allcheck);
+
+    var idSeCheck = document.querySelector('#box-3')
+    console.log(idSeCheck);
+
+    let btn = document.querySelector('button')
+    console.log('btn =', btn);
+  
+
+    // (5) document.querySelectorAll() => nodeList dega
+    const all = document.querySelectorAll('.all ')
+    console.log(all);
+
+    var checkById = document.querySelectorAll('#box-4')
+    console.log(checkById);
+  </script>
+
+</body>
+</html>

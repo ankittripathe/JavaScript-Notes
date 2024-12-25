@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Function with Agruments and Parameters</title>
+</head>
+<body>
+    <script>
+
+      function sum (a, b){
+        let sum = a + b;
+        return sum
+      }
+      let result = sum(4,6)
+      console.log(result);
+
+      console.log(sum(5,5));
+      console.log(sum(11,5));
+      console.log(sum(5,51));
+      
+      //Example 2
+
+      function greeting(name){
+        console.log(`Namaste ${name} uncle`);
+      }
+      greeting('Tiwari')
+
+      // Example 3
+
+      function greeting(name ='Tillu'){ //By default me function call ke time nhi diya toh E wala hi le lega
+        console.log(`Namaste ${name} uncle`);
+      }
+      greeting()
+
+
+    </script>
+</body>
+</html>

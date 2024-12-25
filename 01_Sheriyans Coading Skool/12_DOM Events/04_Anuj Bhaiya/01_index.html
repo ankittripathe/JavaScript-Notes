@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM EVENTS</title>
+    <link rel="stylesheet" href="01_style.css" />
+  </head>
+  <body>
+    <div class ="container" id="create">
+      <div class="box" id="box-1" onclick="myClick()">box-A</div>
+      <div class="box random" id="box-2" onmouseover="mouseOver()">box-B</div>
+      <div class="box" id="box-3">box-C</div>
+      <div class="box" id="box-4">box-D</div>
+      <div class="box" id="box-5">box-E</div>
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque,
+      repudiandae.
+    </p>
+
+    <form>
+      <input type ="text"
+       onkeypress ="keyPressEvent()"
+       onkeyup ="keyUpEvent()"
+       onkeydown ="keyDownEvent()"
+      />
+      <br/>
+      <br/>
+      <input type="text"  id ="keyInput"/>
+    </form>
+
+    <script src="01_DOM_Events.js"></script>
+  </body>
+</html>
+
+<body></body>

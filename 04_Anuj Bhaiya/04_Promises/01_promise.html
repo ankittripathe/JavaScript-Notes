@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promises</title>
+</head>
+<body>
+  <h1>Promises In JavaScripts</h1>
+
+  <script>
+    let bgColor = document.body
+    bgColor.style.backgroundColor = 'skyblue'
+
+    // Example.1
+    const ticket = new Promise(function (resolve, reject) {
+      const isBoarded = true;
+      if (isBoarded) {
+        resolve("You are in the Flight");
+      } else {
+        reject("Your flight has been cancelled");
+      }
+    });
+
+    ticket
+      .then((data) => {
+        console.log("Congrats", data);
+      })
+      .catch((data) => {
+        console.log("Sorry", data);
+      });
+
+    // Example.2
+    const tickets = new Promise(function (resolve, reject) {
+      const isBoarded = false;
+      if (isBoarded) {
+        resolve("You are in the Flight");
+      } else {
+        reject("Your flight has been cancelled");
+      }
+    });
+
+    tickets
+      .then((data) => {
+        // resolve ke liye E wala chalega
+        console.log("Congrats", data);
+      })
+      .catch((data) => {
+        // reject ke liye E wala chalega
+        console.log("Sorry", data);
+      })
+      .finally(() => {
+        // reject hoga ya resolve chalega hi
+        console.log("I will always Executed"); 
+      });
+
+
+      
+    // Example.3
+    const love = new Promise((resolve, reject) => {
+      let name = prompt('Enter your Name')
+      if (name === 'Ankit') {
+        resolve('You are Winner');
+      } else {
+        reject('Better luck next time');
+      }
+    })
+
+    love
+    .then((result) => {
+      console.log('Got your Number', result);
+    })
+    .catch((err) => {
+      console.log('Sorry', err);
+    });
+  </script>
+</body>
+
+</html>

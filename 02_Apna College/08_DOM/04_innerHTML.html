@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DOM(innerText | innerHTML | textContent)</title>
+</head>
+<body style="background-color: black; color: aliceblue">
+  <h1>DOM (innerText || innerHTML || textContent)</h1>
+  <div>
+    <h3>Fruits</h3>
+    <ul>
+      <li>Mango</li>
+      <li>Apple</li>
+      <li>Orange</li>
+    </ul>
+    <h4 style="visibility: hidden;">This is For Text content which is hidden here <span>Good Night</span></h4>
+  </div>
+
+  <script>
+    // Selecting div using queryselector
+    const save = document.querySelector("div");
+    console.log(save);
+
+    console.log(save.innerText);     // Pure text aaega, hidden wale ko ignore kr dega.
+    console.log(save.innerHTML);     // Html content vi aata hai. 
+    console.log(save.textContent);   // hidden wala vi print hoga.
+    
+
+    // Selecting h4 using queryselector
+    const heading4 = document.querySelector('h4')
+    console.log(heading4.innerHTML)
+    console.log(heading4.innerText)
+    console.log(heading4.textContent);   // hidden vi rhega toh vi print hoga
+
+    
+    // Selecting h3 using queryselector
+    const heading = document.querySelector('h3')
+
+    // Changing innerHTML 
+    heading.innerHTML = '<i>New Heading</i>'
+    heading.style.color = 'red'
+    console.log(heading);
+    
+  </script>
+</body>
+</html>

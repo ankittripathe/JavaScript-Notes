@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inheritance In Js(part-1)</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <h1>Inheritance In Js</h1>
+    <h3>
+      Ineritance is passing down properties & methods from parent class to child
+      class
+    </h3>
+    <p>
+      Notes: if child & parent have same method, child's method will be
+      used[Method overRiding]
+    </p>
+
+    <script>
+      /* syntax
+         class parent {}
+         class Child extends Parent {}
+      */
+
+      /**** Example.1 *****/
+      class User {
+        constructor(username) {
+          this.username = username;
+        }
+
+        logMe() {
+          console.log(`USERNAME is ${this.username}`);
+        }
+      }
+
+      class Teacher extends User {
+        constructor(username, email, password) {
+          super(username);
+          this.email = email;
+          this.password = password;
+        }
+
+        addCourse() {
+          console.log(`A new course was added by ${this.username}`);
+        }
+      }
+
+      //user1
+      let chai = new Teacher("ankit", "ankit@outlook.com", "123");
+      console.log(chai);
+      console.log(chai.logMe());
+      console.log(chai.addCourse());
+
+      // user2
+      let masalaChai = new User("kadakChai");
+      console.log(masalaChai);
+      console.log(masalaChai.logMe());
+      // console.log(masalaChai.addCourse());
+
+
+      console.log(chai === masalaChai);
+
+      console.log(chai instanceof Teacher);
+      console.log(chai instanceof User);
+
+
+      /**** Example.2 *****/
+      // class parent {
+      //   hello() {
+      //     console.log("Happy New Year");
+      //   }
+      // }
+
+      // class child extends parent {}
+
+      // let obj = new child();
+      // console.log(obj);
+      // console.log(obj.hello());
+
+      // /**** Example.3 *****/
+      // // parent class
+      // class person {
+      //   eat() {
+      //     console.log("eat");
+      //   }
+      //   sleep() {
+      //     console.log("sleep");
+      //   }
+      //   work() {
+      //     console.log("do nothing");
+      //   }
+      // }
+
+      // // child classes.
+      // class engineer extends person {
+      //   work() {
+      //     console.log("solve problems, bulid somethings");
+      //   }
+      // }
+
+      // class doctor extends person {
+      //   work() {
+      //     console.log("treat patients");
+      //   }
+      // }
+      // //multiple classes( child wala=> engineer, doctor) same class(means =>parent wala ) se inheritance kr skti hai
+
+      // let person1 = new engineer();
+      // console.log(person1);
+      // console.log(person1.work()); // dono me work wala function hai but child wala invoked hoga.
+      // console.log(person1.eat());
+      // // Notes:if child & parent have same method, child's method will be used[Method overRiding]
+      // // parent class & child class me same function(method) hai toh child class wala invoked hoga(print hoga)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM(Create/append /prepend/ before/after)</title>
+    <style>
+      div {
+        height: 200px;
+        width: 100px;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+      </ul>
+    </div>
+
+    <script>
+      /* steps 1. createElement
+         Steps 2. finally screen pe show krne ke liye append/prepend/before/after (any ) 
+         node.append(elm)  => adds at the end of node(inside)
+         node.prepend(elm) => adds at the start of node(inside)
+         node.before(elm)  => adds before the node(outside)
+         node.after(elm)  => adds after the node(outside)
+      */
+
+      //  Step.1
+      let newBtn = document.createElement("button");
+      newBtn.innerText = "click me!";
+      console.log(newBtn);
+
+      // step.2 => display krwane ke liye
+      let divs = document.querySelector("div");
+      // divs.append(newBtn);
+      // divs.prepend(newBtn)
+      // divs.before(newBtn)
+      divs.after(newBtn);
+
+      // Example.2
+      let createdPara = document.createElement("p");
+      createdPara.innerHTML = "<i> hello jee Kaise ho sare </i>";
+
+      document.body.append(createdPara); // body wale part me dikhane ke liye body ka use krenge
+      // document.body.prepend(createdPara)
+
+      /* Notes: 
+    Element.append() allows you to also append string objects, whereas Node.appendChild() only accepts Node objects. Element.append() has no return value, whereas Node.appendChild() returns the appended Node object. Element.append() can append several nodes and strings, whereas Node.appendChild() can only append one node
+
+    To sum it up, append() is used to add HTML content or an element to the end of an existing element while appendChild() is used to add a new node element as a child to an existing node.
+*/
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance In Js(part-2)</title>
+</head>
+<body style="background-color:black; color: aliceblue;">
+    <h1>Inheritance In Js Example </h1>
+
+    <script>
+       /* syntax
+          class parent {}
+          class Child extends Parent {}
+       */
+
+       //Example
+       class person {            
+        eat(){
+            console.log('eat');
+        }
+        sleep(){
+            console.log('sleep');
+        }
+
+        work(){
+            console.log('do nothing');
+        }
+       };
+
+       class engineer extends person{
+        work(){
+            console.log('solve problems, bulid somethings');
+        }
+       };
+
+       class doctor extends person{
+        work(){
+            console.log('treat patients');
+        }
+       };   
+        //multiple classes(means child wala=> engineer, doctor) same class(means =>parent wala ) se inheritance kr skti hai 
+
+       let ankitObj = new engineer ()
+       console.log(ankitObj);
+       console.log(ankitObj.work());// just like this dono me work wala function hai but child wala invoked huwa
+       console.log(ankitObj.eat());
+
+       // parent class and child class me same function(method) hai toh child class wala invoked hoga(print hoga)
+
+        
+    </script>
+</body>
+</html>

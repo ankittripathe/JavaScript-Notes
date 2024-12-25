@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>class In JavaScripts</title>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        In JavaScript, classes are used to define the blueprint for objects, allowing developers to create objects that
+        share the same properties and methods.
+    </h2>
+
+    <h3>
+        A class in JavaScript is defined using the class keyword, followed by the class name. The class body is defined
+        within curly braces {} and contains the properties and methods of the class.
+    </h3>
+
+    <h4>
+        The constructor method is a special method that is called when a new object is created from the class. It is
+        used to initialize the properties of the object. In this example, the constructor takes in two parameters name
+        and age and assigns them to the object's properties.
+    </h4>
+
+    <h5>
+        You can create a new object using the new keyword and passing in any required arguments to the constructor
+    </h5>
+
+    <script>
+        // Example.1
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        };
+
+        let person1 = new Person("Ankit", 23);
+        console.log('person1 =', person1);
+
+        let person2 = new Person("John", 33);
+        console.log('person2 =', person2);
+
+        // Notes: The constructor method is a special method that is called when a new object is created from the class. It is used to initialize the properties of the object. In this example, the constructor takes in two parameters name and age and assigns them to the object's properties.
+
+        // You can create a new object using the new keyword and passing in any required arguments to the constructor. For example:
+
+        // Example.2
+        class employee {
+            // Constructor to initialize properties
+            constructor(name, age) {
+                this.name = name; // Instance variable
+                this.age = age;   // Instance variable
+            }
+
+            // Method to display information about the person
+            greet() {
+                return `Hello, my name is ${this.name} and I am ${this.age} years old.`
+            }
+        }
+
+        // Once the class is defined, you can create instances (objects) of that class using the new keyword.
+
+        let user1 = new employee('Ektaaa', 24)
+        // user1.name = 'Ektaaaa'
+        console.log(user1);
+
+        // Call the greet method on the instances
+        console.log(user1.greet());
+
+    </script>
+</body>
+
+</html>

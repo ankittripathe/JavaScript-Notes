@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProtoType</title>
+  <style>
+    h3 {
+      color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: center">ProtoType:-</h1>
+  <h2>JavaScripts object have a special property called prototype</h2>
+  <h2>JavaScripts object have state and behavior (properties & method)</h2>
+  <h2>We can set prototype using __proto__</h2>
+  <h2>
+    Prototype is a mechanism by which objects can inherit properties & methods from other objects.
+  </h2>
+  <h3>Notes:- If object & prototype have same method, object's method will be used</h3>
+
+  <script>
+    // Example.1
+    const employee = {
+      company: 'service-based',
+      taxRate() {
+        return 'tax rate is 10%'
+      },
+    };
+    console.log(employee);            // output:- {company: 'service-based', taxRate: ƒ}
+    console.log(employee.taxRate());  // output:- tax rate is 10%
+
+
+    // user-1
+    const Avinash = {
+      salary: 50000,
+    };
+    console.log(Avinash);   // output:- 50000
+
+    // user-2
+    const Aryan = {
+      salary: 40000,
+    };
+    console.log(Aryan);    // output:- 40000
+
+
+    // user-3
+    const Ashish = {
+      salary: 30000,
+    };
+    console.log(Ashish);  // output:- 30000
+
+
+    // Jiske object ke method/property ko hum use krna chahte hai unko hum dusri ka prototype set kr denge.
+    // we can set prototype => currObj.__proto__ = oldObj (whose function is going to use)
+    Avinash.__proto__ = employee;
+    Aryan.__proto__ = employee;
+    Ashish.__proto__ = employee;
+
+    console.log("salary of Avinash =", Avinash);
+    console.log(Avinash.company);
+    console.log(Avinash.taxRate());
+
+
+    console.log('salary of Aryan =', Aryan);
+    console.log(Aryan.taxRate());
+
+
+    /*****************************************************************************/
+    // Notes:- If object & prototype have same method, object's method will be used.
+
+    // Example.2
+    const companyDetails = {
+      bonous: '5k',
+      company: 'software',
+      address: 'Noida',
+    };
+    console.log('companyDetails =', companyDetails);
+    // output:- {bonous: '5k', company: 'software', address: 'Noida'}
+
+
+    const employee1 = {
+      role: 'developer',
+      salary: '55k',
+      address: 'remote'
+    };
+
+    // protoType set here
+    employee1.__proto__ = companyDetails;
+
+    // Notes: This line is establishing that employee1 will inherit from the companyDetails object. This means that employee1 has access to all the properties & methods of comanyDetails, unless employee1 has its own method/ property that override them.
+
+    console.log(employee1);         // output:- {role: 'developer', salary: '55k', address: 'remote'}
+    console.log(employee1.bonous);  // output:- 5k
+    console.log(employee1.salary);  // output:- 55k
+    console.log(employee1.address); // output:- remote (use own method or property if available in both)
+
+    // Example.3
+    const courseDetails = {
+      instructor: 'Shraddha khapra',
+      course: 'JavaScripts',
+      duration: '3-months',
+      price: 'Rs.2999',
+      discount: function () {
+        return 'Rs.1000 off for first 100 user'
+      }
+    };
+    console.log('courseDetails =', courseDetails);
+
+    const userAnkit = {
+      name: 'Ankit',
+      discount: function () {
+        return 'Rs.500'
+      }
+    };
+
+    userAnkit.__proto__ = courseDetails;
+
+    console.log(userAnkit.name);        // output:- Ankit
+    console.log(userAnkit.discount()); 
+  // output:- Rs.500  (khud ka method use krega agar dono me available hai toh)
+
+  </script>
+</body>
+</html>
+

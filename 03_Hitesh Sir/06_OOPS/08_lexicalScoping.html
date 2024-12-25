@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lexical Scoping</title>
+  </head>
+  <body style="background-color: black; color: aliceblue">
+    <h1>Lexical Scoping</h1>
+
+    <script>
+      //Lexical scoping
+      //Example.1
+      function init() {
+        var name = "krishna"; // name is a local variable created by init
+        function displayName() {
+          // displayName() is the inner function, that forms the closure
+          console.log(name); // use variable declared in the parent function
+        }
+        displayName();
+      }
+      init();
+
+      /*notes:
+      init() creates a local variable called name & a function called displayName(). The displayName() function is an inner function that is defined inside init() and is available only within the body of the init() function. Note that the displayName() function has no local variables of its own. However, since inner functions have access to the variables of outer functions, displayName() can access the variable name declared in the parent function, init().
+      */
+
+      //Example.2
+      function outer() {
+        let username = "Ankit";
+
+        function innerOne() {
+          let secret = "my123";
+          console.log("inner1 =", username);
+        }
+        innerOne();
+
+        function innerTwo() {
+          console.log("inner2 =", username);
+          // console.log(secret);           // error (bhai-bhai me nhi hoga, parents se mang skte hai)
+        }
+        innerTwo();
+        // console.log('Outer', secret);    // error (parent baccho se nhi mang skte hai)
+      }
+      outer();
+      // console.log('Too Outer =', username);   // error
+    </script>
+  </body>
+</html>

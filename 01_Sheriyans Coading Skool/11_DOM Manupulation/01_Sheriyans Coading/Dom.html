@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DOM Lecture</title>
+  <style>
+    h5{
+      height: 20vh;
+      width: 30vw;
+      background-color: pink;
+    }
+  </style>
+</head>
+<body>
+  <h1>DOM (Document object Model)</h1>
+  <h2>Learn What Matter's</h2>
+  <h3 id="demo">select elemets by id</h3>
+  <h4 class="check">hello hello</h4>
+  <h5>hello</h5>
+
+  <p>para1</p>
+  <p>para2</p>
+
+  <script>
+    // 4 Pillers  of DOM //
+    // (1) Selection of an Elements //
+    console.log(document.querySelector('h1'));
+
+    // upar wala line declare kr ke k taki kaam ashaan ho jaye.
+    var a = document.querySelector("h1");
+    // console.log(a);
+
+
+    // (2) Changing HTML  //
+    var a = document.querySelector("h1");
+    // a.innerHTML = "Changed HTML";
+
+    // bina variable declare kiye.
+    // document.querySelector("h2").innerHTML = "PreetyDope";
+
+
+    // (3) Changing CSS   //
+    var a = document.querySelector("h1");
+    // a.style.backgroundColor = "red";
+    // a.style.color = "black";
+    // a.style.fontSize = "40px";
+    // a.style.padding = '16px'
+
+
+    // (4) Events Listner  //
+    var a = document.querySelector("h1");
+    // a.addEventListener("click", function (){
+    //   a.innerHTML = "EventListner Topic";
+    //   a.style.backgroundColor = "yellow";
+    //   a.style.color = "black";
+    //   a.style.borderRadius = "10px";
+    //   a.style.padding = "30px";
+    // });
+
+
+
+    // (5) Events Listner Using (arrow function) //
+    var a = document.querySelector("h1")
+    a.addEventListener('click', ()=>{
+      a.innerHTML = "EventListner Topic";
+      a.style.backgroundColor = "yellow";
+      a.style.color = "black";
+      a.style.borderRadius = "10px";
+      a.style.padding = "30px";
+    })
+
+
+
+    // (6) Selecting Elements by Id  //
+    var b = document.getElementById('demo')
+    b.style.backgroundColor = 'orange'
+    b.style.padding = '10px'
+    b.style.borderTopLeftRadius = '16px'
+    b.style.borderBottomRightRadius = '16px'
+
+
+    
+    // another one
+    var d = document.querySelector('h5')
+    d.innerHTML = '<h1>Just Time Pass</h1>'
+    d.innerHTML = 'Billo'
+    // innerHTML => bracket ke ander rhe ya na rhe show bina bracket ke hoga display par
+
+    d.style.backgroundColor = 'lightgreen'     // In js and interal css => priority js wala hoga
+    
+    d.textContent = '<h5>Just Time Pass</h5>'
+    d.textContent = 'Farari_Car'
+    // textContent => bracket me hoga toh bracket ke sath display hoga aur bina bracket wala bina bracket ke
+
+    
+    // (7) Selecting Multiple elements at a same time  //
+    var e = document.querySelectorAll('p')
+    console.log(e);
+
+    e.forEach((item)=>{
+      console.log(item);  
+    })
+    
+  </script>
+</body>
+</html>

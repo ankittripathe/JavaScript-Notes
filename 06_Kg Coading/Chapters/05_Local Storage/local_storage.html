@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Local Storage</title>
+</head>
+
+<body>
+  <script>
+
+    let product = {
+      name: "Shirt",
+      price: 499,
+      rating: {
+        stars: 4.6,
+        noOfReviews: 434,
+      },
+    };
+
+    // Ek barr store krne ke badd Application => local storage => url https//127.0.0.1.5500 me parmenent store hoo jaega refresh krne ke badd vi nhi hatega. 
+    // comment kr dene ke badd vi print hog a console krne par local store se utha ke dega
+
+    // localStorage.setItem('Name', 'JavaScripts')   
+    // localStorage.setItem('price', '499');
+    console.log(localStorage.getItem('Name'));
+    console.log(localStorage.getItem('price'));
+    console.log(typeof product);
+
+    localStorage.setItem('product', JSON.stringify(product))
+    console.log(localStorage.getItem('product'));
+    console.log(typeof product);
+
+    let product2 = JSON.parse(localStorage.getItem('product'))
+    console.log(product2);
+
+    //remove one item
+    // localStorage.removeItem('price')
+
+    //remove all
+    // localStorage.clear()
+
+
+
+  </script>
+</body>
+
+</html>

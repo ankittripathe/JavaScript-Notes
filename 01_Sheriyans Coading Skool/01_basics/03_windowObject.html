@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Object (browser part)</title>
+</head>
+<body style="text-align: center; background-color: skyblue;">
+    <h1>Browser ke Part or Features => log, alert, prompt, confirm</h1>
+    <ol style="list-style-type: none;">
+        <li>console.log()</li>
+        <li>console.warn()</li>
+        <li>console.error()</li>
+    </ol>
+    <ol>alert</ol>
+    <ol>prompt</ol>
+    <ol>confirm</ol>
+
+
+
+    <script>
+        /* (1) console.log() => 
+           log() method writes (logs) a message to the console.
+        
+           syntax:
+           console.log('code to be executed')
+        */
+
+        console.log('Hello');
+        console.warn('overLoad');
+        console.error('danger');
+
+
+        /* (2) alert() => 
+           alert() method displays an alert box with a message and an OK button.
+
+           alert() method is used when you want information to come through to the user.
+           Do not overuse this method. It prevents the user from accessing other parts of the page until the alert box is closed.
+
+           syntax:
+           alert(message)
+        */
+
+        // Example.1 (without storing in variable)
+        alert("Hello\nHow are you?");
+
+
+        // Example.2 (storing in variable)
+        let store = alert(location.hostname);
+        console.log(store);
+
+
+
+        /* (3) prompt() =>
+            prompt box is used if you want the user to input a value. 
+
+            When a prompt box pops up, the user will have to click either "OK" or "Cancel" to proceed.
+            prompt() method returns the input value if the user clicks "OK", otherwise it returns null.
+
+            syntax:
+            prompt()
+            prompt(text, defaultText) => agar user kuch nhi Enter krega toh By-defaultText le lega.
+        */
+
+        // Example.1 (without storing in variable)
+        prompt('Enter the Number', 'defaultText = 10')
+
+        // Example.2 (storing in variable)
+        let user1 = prompt('Enter your Name', 'Ankit Tripathi')
+        console.log(user1);
+
+
+
+        /* (4) confirm() =>
+           confirm box is often used if you want the user to verify or accept something.
+
+           confirm() method displays a dialog box having a message, with OK button or Cancel button.
+
+           confirm() method returns true if the user clicked "OK", otherwise false.
+           Do not overuse this method. It prevents the user from accessing other parts of the page until the box is closed.
+
+           syntax:
+           confirm(message)
+
+        */
+
+         // Example.1 (without storing in variable)
+        let text;
+        if (confirm("Press a button!") == true) {
+            text = "You pressed OK!";
+        } else {
+            text = "You canceled!";
+        }
+        console.log(text);
+
+    
+         // Example.2 (storing in variable)
+        let yourResponse = confirm('ok Agree')
+        console.log(yourResponse);
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM (querySelectorAll)</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-black">
+      <h1 id="title" class="heading">DOM Learning On Chai aur Code</h1>
+      <h2>Lorem, ipsum dolor</h2>
+      <h2>Lorem, ipsum dolor</h2>
+      <h2>Lorem, ipsum dolor</h2>
+      <h2>Lorem, ipsum dolor</h2>
+      <p>Lorem, ipsum</p>
+      <input type="password" />
+
+      <ul>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
+    </div>
+
+    <script>
+      // Example.1
+      var tempLiList = document.querySelectorAll("li");
+      console.log(tempLiList);
+      tempLiList[0].style.color = "red";
+      tempLiList[0].style.fontSize = "55px";
+      tempLiList[1].style.color = "green";
+      tempLiList[1].style.fontSize = "40px";
+      tempLiList[2].style.color = "blue";
+      tempLiList[2].style.fontSize = "25px";
+
+      // protoType me check kre forEach se hoga ya nhi. (queryselectorAll ka forEach() se hota hai check in.console  prototype me)
+      tempLiList.forEach(function (l) {
+        l.style.backgroundColor = "yellow";
+      });
+
+      // By Arrow function
+      tempLiList.forEach((l) => {
+        l.style.backgroundColor = "yellow";
+      });
+
+
+      // Exmaple.2
+      const myH1 = document.querySelectorAll("h1");
+      console.log(myH1);                  // Single nodelist huwa tab vi ohi formula apnana padega
+      myH1[0].style.backgroundColor = "orangered";
+      myH1[0].style.padding = "3vh";
+      myH1[0].style.borderRadius = "20px";
+
+
+    </script>
+  </body>
+</html>

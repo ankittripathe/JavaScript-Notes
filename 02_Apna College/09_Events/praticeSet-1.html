@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pratice Set-1 (Method-1)</title>
+  <style>
+    button {
+      display: block;
+      margin-inline: auto;
+      margin-top: 40vh;
+      height: 7vh;
+      width: 10vw;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+  (1) Create a toggle button that changes the screen color to dark-mode when clicked & light-mode when clicked again.
+  -->
+  <button>change mode</button>
+
+  <script>
+    const bodee = document.querySelector('body')
+    const modeBtn = document.querySelector("button");
+    let currentMode = "light";
+
+    modeBtn.addEventListener("click", () => {
+      if (currentMode === "light") {
+        currentMode = "dark";
+        // document.querySelector("body").style.backgroundColor = "black";
+        // document.querySelector("body").style.color = "white";
+        bodee.style.backgroundColor = 'black'
+        bodee.style.color = 'white'
+      } else {
+        currentMode = "light";
+        // document.querySelector("body").style.backgroundColor = "white";
+        // document.querySelector("body").style.color = "black";
+        bodee.style.backgroundColor = 'white'
+        bodee.style.color = 'black'
+      }
+      console.log('currentMode =', currentMode);
+    });
+  </script>
+</body>
+
+</html>

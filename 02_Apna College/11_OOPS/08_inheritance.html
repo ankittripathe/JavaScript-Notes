@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance In Js(part-1)</title>
+</head>
+<body style="background-color:black; color: aliceblue;">
+    <h1>Inheritance In Js</h1>
+    <h3>Ineritance is passing down properties & methods from parent class to child class</h3>
+    <p>Notes: if child & parent have same method, child's method will be used[Method overRiding]</p>
+    
+    <script>
+       /* syntax
+       class parent {
+
+       }
+       class Child extends Parent {
+
+       }
+
+       */
+
+       //Example
+       class parent {
+        hello(){
+            console.log('Hello jee');
+        }
+       }
+
+       class child extends parent {
+
+       }
+
+       let obj = new child ()
+       console.log(obj);
+       console.log(obj.hello());
+
+        
+    </script>
+</body>
+</html>

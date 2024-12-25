@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Returns</title>
+</head>
+<body>
+    <script>
+        function generateRandomMove(){
+          let random = Math.random();
+          let randomMove = random * 3;
+          return randomMove;
+        }
+        let result = generateRandomMove()
+        console.log(result);                 // aaise vi hoga
+
+        console.log(generateRandomMove());
+        console.log(generateRandomMove());
+        console.log(generateRandomMove());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM(firstChild /lastChild /nextSibling/ previousSibling)</title>
+  </head>
+  <body>
+    <!--  -->
+    <h1>Best js Course</h1>
+    <p>Understanding The DOM Tree Structure</p>
+    <hr />
+    <p>It's easy. Help JS to communicate with HTML</p>
+
+    <script>
+      let parent = document;
+      // console.log(parent);
+
+      let headElm = document.head;
+      // console.log(headElm);
+
+      let bodyElm = document.body;
+      // console.log(bodyElm);
+
+      /*********** childNodes  **********/
+      const cNodes = document.body.childNodes;
+      // console.log(cNodes);
+
+      /*********** children  **********/
+      const bodychild = document.body.children;
+      // console.log(bodychild);
+
+      /********* firstChild / firstElementChild ***********/
+      let firstElmChild = document.body.firstElementChild;
+      // console.log(firstElmChild);
+      // sidhe Elements kaun sa hai nikalega.Gap,comments nhi include krta hai
+
+      let firstChild = document.body.firstChild;
+      // console.log(firstChild);
+      // gap wala ko text maanta hai.
+
+      /********  lastChild / lastElementChild  **********/
+      let lastElmChild = document.body.lastElementChild;
+      // console.log(lastElmChild);
+
+      let lastChild = document.body.lastChild;
+      // console.log(lastChild);
+
+      /********  nextsibling / nextElementSibling  **********/
+      let a = document.body.firstElementChild.nextElementSibling;
+      // console.log(a);
+
+      let b = document.body.firstElementChild.nextSibling;
+      // console.log(b);
+
+      let c = document.body.firstChild.nextElementSibling;
+      // console.log(c);
+
+      let d = document.body.firstChild.nextSibling;
+      // console.log(d);
+
+      // Note: firstElementchild/nextElementChild => h1, p, a , ....
+      // Note: firstchild = text , comments because khaali wala jagah ko text samajata hai
+
+      let k = document.body.firstElementChild.nextElementSibling.previousElementSibling;
+      // console.log(k);
+
+      let l = document.body.firstChild.nextElementSibling.previousSibling;
+      // console.log(l);
+
+    </script>
+  </body>
+</html>

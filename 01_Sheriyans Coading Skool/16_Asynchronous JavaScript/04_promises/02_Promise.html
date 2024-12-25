@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promises</title>
+  </head>
+  <body>
+    <h1>Promises-part2:- Asynchornous JavaScripts</h1>
+
+    <script>
+      let body = document.body;
+      body.style.backgroundColor = "lightgreen";
+      body.style.textAlign = "center";
+
+      /************ Example.1 ******************************/
+
+      // const ticket1 = new Promise(function (resolve, reject) {
+      //   const isBoarded = true;
+      //   if (isBoarded) {
+      //     resolve("Your ticket is confirmed");
+      //   } else {
+      //     reject("No seat Available");
+      //   }
+      // });
+
+      // ticket1
+      //   .then((data) => {
+      //     console.log("Congrats", data);
+      //   })
+      //   .catch((error) => {
+      //     console.log("Sorry", error);
+      //   });
+      // console.log(ticket1);
+
+      /************ Example.2 ******************************/
+
+      // const yourOrder = new Promise((resolve, reject) => {
+      //   const isConfirmed = false;
+      //   if (isConfirmed) {
+      //     resolve("Your order has been sucessfully placed");
+      //   } else {
+      //     reject("Your Order has been cancelled");
+      //   }
+      // });
+
+      // yourOrder
+      //   .then((result) => {
+      //     console.log("Congrats", result);
+      //   })
+      //   .catch((err) => {
+      //     console.log("Sorry", err);
+      //   })
+      //   .finally(() => {
+      //     console.log("I will always Executed");
+      //   });
+      // console.log(yourOrder);
+
+      /************ Example.3 ******************************/
+
+      // const luckyDraw = new Promise((res, rej) => {
+      //   let name = prompt("Enter your Name");
+      //   if (name === "Ankit") {
+      //     res("You are Winner");
+      //   } else {
+      //     rej("Better luck next time");
+      //   }
+      // });
+
+      // luckyDraw
+      //   .then((result) => {
+      //     console.log("Congrats", result);
+      //   })
+      //   .catch((err) => {
+      //     console.log("Sorry", err);
+      //   });
+      // console.log(luckyDraw);
+
+      /************ Example.4 ******************************/
+
+      //   let promise1 = new Promise((resolve, reject) => {
+      //     let num = Math.round(Math.random() * 10);
+      //     console.log(num);
+      //     if (num < 5) {
+      //       reject("random number was not supporting you");
+      //     } else {
+      //       resolve("Yes I am Done");
+      //     }
+      //   });
+
+      //   promise1
+      //     .then((data) => {
+      //       console.log(data);
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+      //   console.log(promise1);
+
+      /************ Example.5 (Bina varibale me declear kiye) ********/
+
+      //   new Promise((resolve, reject) => {
+      //     setTimeout(()=>{
+      //         if(true){
+      //         resolve('problem resolved')
+      //         }else{
+      //             reject('Network Error')
+      //         }
+      //     }, 1000)
+      //   })
+      //     .then((result) => {
+      //       console.log(result);
+      //     })
+      //     .catch((error) => {
+      //       console.log(error);
+      //     });
+
+      /***** Example.8 (function ke ander rakh ke promise ko return kiya gaya hai) *****/
+      const getPromise = (shouldSucceed) => {
+        return new Promise((resolve, reject) => {
+          if (shouldSucceed) {
+            resolve("Success");
+          } else {
+            reject("Network Error");
+          }
+        });
+      };
+
+      const answer = getPromise(true); // Change to `false` to test rejection
+      console.log(answer); // Logs the pending promise
+
+      answer
+        .then((data) => {
+          console.log("Promise consumed:", data);
+        })
+        .catch((err) => {
+          console.log("Error:", err);
+        });
+
+      /****************** Example.9   *****************************/
+      const bookCab = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (true) {
+              resolve("Cab book ho gaya");
+            } else {
+              reject("We are not available");
+            }
+          }, 2000);
+        });
+      };
+
+      // Function call directly here
+      bookCab()
+        .then((data) => {
+          console.log("Congrats", data);
+        })
+        .catch((err) => {
+          console.log("Sorry", err);
+        });
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM(Create Elements)</title>
+  </head>
+  <body style="background-color: black; color: white">
+
+  </body>
+
+  <script>
+    /****  Element created  ****/
+    let createdDiv = document.createElement("div"); //Element created
+    createdDiv.innerHTML = "Happy MahaShivratri";
+    createdDiv.style.color = "yellow";
+    console.log(createdDiv);
+
+    document.body.appendChild(createdDiv);
+    // document.body.append(createdDiv);
+    /*Note: finally show krne ke liye appendChild() krna hota hai tab
+          show hoga  Display par jo hmne create kr ke uske ander likha hai
+    */
+
+    createdDiv.className = "main doit"; //class Added =>  (class ka value Ek se adhik vi  ho skta hai)
+    createdDiv.id = "check"; // id Added
+    // createdDiv.id = Math.random() * 10 + 1;             // random id Added
+    createdDiv.id = Math.round(Math.random() * 10 + 1); // Rounding the random value
+
+
+    // aaise vi class & id Set kr skte thee.
+    // createdDiv.setAttribute('class', 'main doit')
+    // createdDiv.setAttribute('id', Math.round(Math.random()* 10 + 1))
+
+    /* Create Attributes */
+    createdDiv.setAttribute("title", "generated-title");
+    //Attribute(title) created and value given(generated-title)
+
+    createdDiv.style.backgroundColor = "red";
+    createdDiv.style.padding = "15px";
+
+    // Another Method of adding text (best upar wala hi hai )
+    const addText = document.createTextNode("Jai Shree Ram");       // direct text 
+    console.log(addText);
+    document.body.appendChild(addText);
+  </script>
+</html>

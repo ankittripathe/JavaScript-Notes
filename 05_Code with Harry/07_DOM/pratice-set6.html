@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pratice-set6</title>
+</head>
+<body>
+    Hello Namaste!
+    <script>
+        // (1) Write a program using prompt function to take input of age as a value from the  user and use alert to tell him if he can drive
+        let age = prompt("Enter your Age")
+        age = Number.parseInt(age)
+
+        
+        const canDrive = (age) => {
+            return age >= 18 ? true : false
+        }
+
+        if (canDrive(age)) {
+            alert(`You can Drive`)
+        }
+        else {
+            alert(`You can't Drive`)
+        }
+
+        // (2) In Ques1 use confirm to ask the user if we wants to see the prompt again
+        let runAgain = true;
+        while (runAgain) {
+            let ages = prompt("Enter your age")
+            ages = Number.parseInt(ages)
+
+            if (canDrive(ages)) {
+                alert("Yes you can Drives")
+            }
+            else {
+                alert("You Cannot Drives")
+            }
+            runAgain = confirm("Do you want to play again")
+        }
+    </script>
+</body>
+</html>

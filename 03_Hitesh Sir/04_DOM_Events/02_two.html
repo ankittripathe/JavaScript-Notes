@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example-1</title>
+  </head>
+  <body>
+    <div>
+      <h1>Chai aur code</h1>
+      <button id="stop">Stop</button>
+    </div>
+
+    <div>
+      <p>old Price: <s>100$</s></p>
+      <p>old Price: 80$</p>
+      <q>Quotes are Here</q>
+    </div>
+  </body>
+  <script>
+    // function changeText(){
+    //      const store = document.querySelector('h1')
+    //      store.innerHTML = 'Best Js Series'
+    //      store.style.color = 'green'
+    //      store.style.backgroundColor = 'orange'
+    // }
+    // setTimeout(changeText, 3000)
+
+    // const changeText = function(){
+    //    document.querySelector('h1').innerHTML = 'best Js Series'
+    // }
+    // const changeMe = setTimeout(changeText, 2000)
+
+    // document.querySelector('#stop').addEventListener('click', function(){
+    //     clearTimeout(changeMe)
+    //     console.log("STOPPED");
+    // })
+
+    const store1 = document.querySelector("h1");
+    const store2 = document.querySelector("#stop");
+
+    function changeText() {
+      store1.innerHTML = "Best Js Series";
+      store1.style.backgroundColor = "red";
+    }
+    const changeMe = setTimeout(changeText, 6000);
+
+    store2.addEventListener("click", () => {
+      console.log("STOPPED");
+      clearTimeout(changeMe);
+    });
+  </script>
+</html>

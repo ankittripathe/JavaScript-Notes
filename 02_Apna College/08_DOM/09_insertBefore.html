@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>insertBefore</title>
+</head>
+
+<body>
+    <h2>
+        The insertBefore() method in JavaScript is used to insert a new element (or node) before a reference node in the
+        DOM.
+    </h2>
+    <h3>
+        The syntax is as follows:- parentNode.insertBefore(newNode, referenceNode);
+    </h3>
+    <ul>
+        Parameters:
+        <li>parentNode: The parent element to which the new element will be added.</li>
+        <li>newNode: The new node (element, text, etc.) that you want to insert into the DOM.</li>
+        <li>
+            referenceNode: The existing node that you want the new node to be inserted before. If this node is null, the
+            new node is added at the end of the parent node's child nodes.
+        </li>
+    </ul>
+
+    <div id="container">
+        <p id="para1">This is the first paragraph.</p>
+        <p id="para2">This is the second paragraph.</p>
+    </div>
+
+
+
+    <script>
+        // Create a new <p> element
+        let btn = document.createElement('button');
+        btn.innerHTML = "click me!";
+        console.log(btn);
+        
+
+        // Insert it before the second paragraph
+        let container = document.getElementById('container');
+        let referenceNode = document.getElementById('para2')
+        container.insertBefore(btn, referenceNode);
+   
+
+
+    </script>
+</body>
+
+</html>

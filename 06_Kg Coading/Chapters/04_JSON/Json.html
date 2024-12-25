@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>JSON</title>
+</head>
+
+<body>
+  <script>
+
+    let product = {
+      name: 'Shirt',
+      price: 499,
+      rating: {
+        stars: 4.6,
+        noOfReviews: 434,
+      },
+    };
+    console.log(typeof product);
+    console.log(product);
+
+    let str = JSON.stringify(product)   // This will change object into string.
+    console.log(typeof str);
+    console.log(str);     // JSON Object (dono taraf double/single quotes me hoga object)
+
+    let newProduct = JSON.parse(str)    // JSON string ko wapas se Object me change krne ka tarika
+    console.log(typeof newProduct);
+    console.log(newProduct);
+
+
+  </script>
+
+</body>
+
+</html>

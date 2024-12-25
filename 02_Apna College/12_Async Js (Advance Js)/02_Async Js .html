@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchoronous JS</title>
+  </head>
+  <body>
+    <h2>
+      Asynchronous => Due to synchoronous programming, sometimes imp
+      instructions get blocked due to some previous instruction, which cause a
+      delay in UI. Asynchronous code execution allow to execute next instrution
+      immediately and doesn't block the flow.
+    </h2>
+
+    <script>
+     // synchoronous js 
+      console.log("one");
+      console.log("two");
+      console.log("three");
+
+     /* Notes:- 
+        Asynchronous code execution allow to execute next instrution immediately and doesn't block the flow 
+     */
+
+      function sayHello() {
+        console.log("Hello Asynchronus JS");
+      }
+      setTimeout(sayHello, 2000); // timeout: 2s = 2000ms
+
+
+      // Asynchoronous Js
+      setTimeout(() => {
+        console.log("Hello Asynchoronous Js (setTimeOut)");
+      }, 3000);  // timeout: 3s = 3000ms
+
+     // synchoronous js 
+      console.log("four");
+      console.log("five");
+      console.log("six");
+      
+    </script>
+  </body>
+</html>

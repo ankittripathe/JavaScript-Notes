@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Console Method</title>
+    <style>
+      body {
+        background-color: rgb(40, 139, 179);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Browser Console Method</h1>
+
+    <!-- <script src="script.js"></script> -->
+    <!-- <script src="script1.js"></script> -->
+    <!-- <script src="script2.js"></script> -->
+
+    <script>
+      // console.log("This is internal Js");
+
+      // Advantages of using Script tag
+      // 1. Seperation of concers (kaam alag alag logo me but jaega)
+      // 2. Browser Caching
+      // 3. Can add multiple scripts Tags
+    </script>
+
+    <script>
+      // console.clear()
+
+      // console.log("hello");
+
+      // console.info("Imp notice");
+
+      // console.warn("Last Warning");
+
+      // console.error("Error")
+
+      console.assert(100 > 10);
+      console.assert(100 < 10);
+
+      console.time("a");
+      console.timeEnd("a");
+
+      // TimeStart and TimeEnd for loop se test
+      console.time("a");
+      for (let i = 0; i < 5; i++) {
+        console.log("hello");
+      }
+      console.timeEnd("a");
+
+      // Time Start and timeEnd  while loop se test
+      console.time("p1");
+      let i = 0;
+      while (i < 5) {
+        console.log("Namaste!");
+        i++;
+      }
+      console.timeEnd("p1");
+
+      // object
+      // Example.1
+      let obj = { a: 1, b: 2, c: 3, d: 4, e: 5 };
+      console.table(obj);
+
+      // Example.2
+      let myDetails = {
+        name: "Ankit",
+        age: 24,
+        role: "FrontEnd Developer",
+      };
+      console.table(myDetails);
+    </script>
+  </body>
+</html>

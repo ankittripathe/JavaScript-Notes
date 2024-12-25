@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>variable & constant</title>
+</head>
+
+<body style="background-color:lightgreen;">
+  <h1>variable & constant</h1>
+
+  <script>
+    // variable & constants //
+
+    /*
+      "In JavaScript language, Sometimes you need to store data In such cases, variables are used"
+      In Js there are 2 version
+      (1) es-5 (old) => var
+      (2) es-6 (new) => let, const
+      we can use both es5 + es6.
+    */
+
+
+
+    /*
+      "Both var & let are ways to create variables in JavaScript".
+       They have mainly 3-differnce.
+      (1) var(es-5) is old version & let(es-6) is newer version.
+      (2) var is functional scoped (global scoped) & let is braces scoped {} (block scoped).
+      (3) var add itself to the window object whereas let doesn't add.
+    */
+
+
+    // (1) var(es-5) se vi variable bana skte hai aur, letral let(es-6) se vi varible bana skte hai.
+    var num1 = 66;
+    console.log("num1 =", num1);  // output: 66
+
+    let num2 = 99;
+    console.log("num2 =", num2); // output: 99
+
+
+    /* (2)
+      var => function scoped (global scoped) hota hai. var apne nearest function me kahi vi use ho skta hai.
+      let => braces scoped {} (block scoped) hota hai. Shirf apne block me hi use hoga.
+    */
+
+
+    // function Scoped  //
+    function abcd() {
+      for (var i = 1; i < 7; i++) {
+        console.log("i=", i);
+      }
+      console.log(i);
+    }
+    abcd();
+
+    // yaha 6 tak hi print hona chiye tha but 7 vi huwa because console(i) braces ke badd vi run krwaya gaya hai so, it will print 7 as well.
+
+
+    // braces scoped (block scope) //
+    function myNum() {
+      for (let i = 100; i < 108; i++) {
+        console.log("i=", i);
+      }
+      //  console.log(i);  // through error because let is a braces scoped not a function scoped
+    }
+    myNum();
+
+
+    // (3) var add itself to the window object whereas let doesn't.
+    //  Open console browser type window (you will see the result there)
+
+    var a = 22;
+    var b = 44
+    var clone = "Ankit"
+    var boolee = true;
+
+    let c = 33;
+    let d = 77;
+
+
+    //  Window object  //
+    /*
+      window is an object jisme wo saare features and cheejein bhari huie hai jo ki directly js ka part nhi hai balki aapko browser ke dwara di jaati hai to use for the dovelopment and testing purpose.
+      For.Eg => console.log(), alert(), prompt(), confirm, setTimeout(), addEventLister()
+
+    */
+
+
+    // Difference between let, varaible & const //
+
+    // (1) var => var can be re-decleared & updated (global scope)
+    var num = 100;
+    var num = 200;   // var can be re-decleared & updated.
+    num = 88;        // var can be updated
+    console.log("num =", num);  // output: 88
+
+
+
+
+    // Example.1 (global scope)
+    /*
+      The var keyword was the traditional way of declaring variables in JavaScript. Variables declared with var are function-scoped or globally-scoped, but not block-scoped. This means that variables declared with var are hoisted to the top of their function or global scope.
+    */
+    var lang = 'java'
+    {
+      var lang = 'kotlin'
+      console.log(lang);
+      {
+        var lang = 'ruby'
+        console.log(lang);
+      }
+      console.log(lang);
+    }
+    console.log(lang);
+    // output are:
+    // kotlin
+    // ruby
+    // ruby
+    // ruby
+
+
+    /* Example.2 (var is functional scoped):-
+    When we declare a variable using var inside a function, we canot access the variable outside the function
+    */
+    function example() {
+      var x = 'functional Scoped';
+      console.log('x =', x); 
+    }
+    example();           // output: functional Scoped
+    // console.log(x);   // Throws ReferenceError: x is not defined
+
+
+    // (2) let => let can't be re-decleared but can be updated only (block scope)
+    let name = 'Ankit'
+    // let name = 'Ektu'  // not allowed because let can't be re-decleared.
+    name = 'Dhoni'        // let can be updated only.
+    console.log("name =", name); // output: Dhoni
+
+    // Example.1
+    let price = 100
+    {
+      let price = 200
+      console.log(price);
+    }
+    {
+      let price = 300
+      console.log(price);
+    }
+    console.log(price);
+    // output are:
+    // 200
+    // 300
+    // 100
+
+    // Example.2
+    let x = 10;
+    if (true) {
+      let y = 20;
+      console.log('x =', x); // Output: 10
+      console.log('y =', y); // Output: 20
+    }
+    console.log('x =', x);    // Output: 10
+    // console.log('y =', y); // Throws ReferenceError: y is not defined
+
+
+    // (3) const => const can't be re-decleared & updated (block scope)
+    const score = 77;
+    // const score  = 44;  // not allowed because const cann't be re-decleared and updated
+    // score = 11;         // not allowed because const value can't be updated/changed
+    console.log("score =", score);  // output: 77
+
+
+    // Example.1 (block scope)
+    const role = 'cloudEr'
+    {
+      const role = 'tester'
+      console.log(role);
+      {
+        const role = 'developer'
+        console.log(role);
+      }
+      console.log(role);
+    }
+    console.log(role);
+    // output are:
+    // tester
+    // developer
+    // tester
+    // cloudEr
+
+
+    /* Did you Know
+      Let & const were introduced in 2015 as new features of JavaScript. Before that, var was the only way to declare a variable.
+    */
+
+  </script>
+</body>
+
+</html>
