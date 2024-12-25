@@ -1,5 +1,4 @@
 //! (1) Difference between let, var & const //
-
 // (1) ES5 => var
 // (2) var (ES5) old js mein tha.
 // (3) var global scoped hota hai.
