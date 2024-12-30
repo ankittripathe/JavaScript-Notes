@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>import- export in Javascripts</title>
+    <style>
+        body{
+            background-color: gray;
+            color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <h3>
+      Export:- Exports make parts of a module (functions, objects, or variables)
+      available for use in other modules. There are two types of exports:
+      <li>
+        (1) Named Exports:- You explicitly define what you want to export.
+        Multiple named exports can exist in a single module
+      </li>
+      <li>
+        (2) Default Exports:- A module can have only one default export.
+        Typically used when the module exports a single main value
+      </li>
+    </h3>
+    <h3>
+      Import:-You can use import to bring functions, objects, or variables from
+      one module into another.
+      <li>
+        (1) Importing Named Exports:- Use curly braces {} to import named
+        exports. You can import multiple values.
+      </li>
+      <li>
+        (2) Importing All Named Exports:- You can import everything into a
+        single object.
+      </li>
+      <li>
+        (3) Importing Default Exports:- No curly braces are needed for default
+        exports. You can also rename the imported default.
+      </li>
+      <li>
+        (4) Mixing Named and Default Imports:- You can combine both named and
+        default imports.
+      </li>
+    </h3>
+    <h4>Notes:-"type": "module". In scripts file while binding</h4>
+
+    <script type="module" src="01_scripts.js"></script>
+  </body>
+</html>
